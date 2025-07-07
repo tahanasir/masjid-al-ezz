@@ -20,11 +20,11 @@ import { QuickStartGuide } from "@/components/home/QuickStartGuide";
 // This helps simulate browser scrolling behavior between pages
 function ScrollToTop() {
   const [location] = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-  
+
   return null;
 }
 

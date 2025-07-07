@@ -1,4 +1,12 @@
-import { Calendar, Award, Users, Megaphone, Clock, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  Calendar,
+  Award,
+  Users,
+  Megaphone,
+  Clock,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,26 +17,26 @@ export function NewsTicker() {
       id: 1,
       title: "Masjid AlEzz has opened!",
       date: "Join us for daily prayers",
-      icon: <Megaphone className="h-5 w-5" />
+      icon: <Megaphone className="h-5 w-5" />,
     },
     {
       id: 2,
       title: "Friday Night Tafseer Family Night",
       date: "Every Friday after Isha Prayer",
-      icon: <Users className="h-5 w-5" />
+      icon: <Users className="h-5 w-5" />,
     },
     {
       id: 3,
       title: "Quran Recitation Classes",
       date: "Every Saturday, 10:00 AM",
-      icon: <Clock className="h-5 w-5" />
+      icon: <Clock className="h-5 w-5" />,
     },
     {
       id: 4,
       title: "Boxing Classes Coming Soon",
       date: "Stay tuned for details",
-      icon: <Award className="h-5 w-5" />
-    }
+      icon: <Award className="h-5 w-5" />,
+    },
   ];
 
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -37,31 +45,31 @@ export function NewsTicker() {
   // Auto rotate events in the ticker
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
+
     if (isAutoPlaying) {
       interval = setInterval(() => {
-        setCurrentEventIndex((prevIndex) => 
-          prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1
+        setCurrentEventIndex((prevIndex) =>
+          prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1,
         );
       }, 6000);
     }
-    
+
     return () => clearInterval(interval);
   }, [upcomingEvents.length, isAutoPlaying]);
 
   // Go to previous announcement
   const goToPrev = () => {
     setIsAutoPlaying(false);
-    setCurrentEventIndex((prevIndex) => 
-      prevIndex === 0 ? upcomingEvents.length - 1 : prevIndex - 1
+    setCurrentEventIndex((prevIndex) =>
+      prevIndex === 0 ? upcomingEvents.length - 1 : prevIndex - 1,
     );
   };
 
   // Go to next announcement
   const goToNext = () => {
     setIsAutoPlaying(false);
-    setCurrentEventIndex((prevIndex) => 
-      prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1
+    setCurrentEventIndex((prevIndex) =>
+      prevIndex === upcomingEvents.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
@@ -71,7 +79,7 @@ export function NewsTicker() {
       const timer = setTimeout(() => {
         setIsAutoPlaying(true);
       }, 10000); // Resume auto-playing after 10 seconds of inactivity
-      
+
       return () => clearTimeout(timer);
     }
   }, [currentEventIndex, isAutoPlaying]);
@@ -84,9 +92,11 @@ export function NewsTicker() {
             <div className="bg-white rounded-full p-1.5 text-primary mr-3 flex-shrink-0">
               <Megaphone className="h-5 w-5" />
             </div>
-            
-            <div className="hidden sm:flex text-white font-bold mr-2">Announcements:</div>
-            
+
+            <div className="hidden sm:flex text-white font-bold mr-2">
+              Announcements:
+            </div>
+
             <div className="overflow-hidden relative w-full h-8">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -113,9 +123,9 @@ export function NewsTicker() {
                 </motion.div>
               </AnimatePresence>
             </div>
-            
+
             <div className="flex items-center ml-3 space-x-1">
-              <button 
+              <button
                 onClick={goToPrev}
                 className="bg-white/10 hover:bg-white/20 rounded-full p-1 text-white transition-colors"
                 aria-label="Previous announcement"
@@ -125,7 +135,7 @@ export function NewsTicker() {
               <div className="text-white/80 text-xs">
                 {currentEventIndex + 1}/{upcomingEvents.length}
               </div>
-              <button 
+              <button
                 onClick={goToNext}
                 className="bg-white/10 hover:bg-white/20 rounded-full p-1 text-white transition-colors"
                 aria-label="Next announcement"

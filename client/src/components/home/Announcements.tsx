@@ -7,13 +7,21 @@ import { Announcement } from "@shared/schema";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export function Announcements() {
-  const { data: announcements, isLoading, error } = useQuery<Announcement[]>({
-    queryKey: ['/api/announcements', { active: true }],
+  const {
+    data: announcements,
+    isLoading,
+    error,
+  } = useQuery<Announcement[]>({
+    queryKey: ["/api/announcements", { active: true }],
   });
   const isMobile = useIsMobile();
 
   if (isLoading) {
-    return <div className="text-center text-xs md:text-sm py-1 md:py-2">Loading announcements...</div>;
+    return (
+      <div className="text-center text-xs md:text-sm py-1 md:py-2">
+        Loading announcements...
+      </div>
+    );
   }
 
   if (error) {
@@ -29,7 +37,9 @@ export function Announcements() {
     return (
       <div className="text-center py-2 md:py-4">
         <Megaphone className="h-4 w-4 mx-auto text-gray-400 mb-1" />
-        <p className="text-xs md:text-sm text-gray-500">No announcements at this time</p>
+        <p className="text-xs md:text-sm text-gray-500">
+          No announcements at this time
+        </p>
       </div>
     );
   }
@@ -46,21 +56,39 @@ export function Announcements() {
             <Megaphone className="h-3 w-3 md:h-4 md:w-4" />
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 text-xs md:text-sm">{announcement.title}</h3>
-            <p className="text-gray-600 text-[10px] md:text-xs mb-0.5 md:mb-1 line-clamp-2">{announcement.content}</p>
+            <h3 className="font-semibold text-gray-900 text-xs md:text-sm">
+              {announcement.title}
+            </h3>
+            <p className="text-gray-600 text-[10px] md:text-xs mb-0.5 md:mb-1 line-clamp-2">
+              {announcement.content}
+            </p>
             <div className="flex items-center text-[9px] md:text-[10px] text-gray-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-2.5 w-2.5 md:h-3 md:w-3 mr-0.5 md:mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-2.5 w-2.5 md:h-3 md:w-3 mr-0.5 md:mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               {formatDate(announcement.date)}
             </div>
           </div>
         </div>
       ))}
-      
+
       {announcements.length > displayCount && (
         <div className="text-right mt-1">
-          <Link href="/announcements" className="text-primary hover:text-primary/80 text-[10px] md:text-xs inline-flex items-center">
+          <Link
+            href="/announcements"
+            className="text-primary hover:text-primary/80 text-[10px] md:text-xs inline-flex items-center"
+          >
             View all announcements <span className="ml-0.5 md:ml-1">›</span>
           </Link>
         </div>

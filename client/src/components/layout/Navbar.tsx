@@ -1,7 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronUp, ChevronRight, Home, Calendar, Users, Info, MessageSquare, Phone, Clock, HeartHandshake } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronUp,
+  ChevronRight,
+  Home,
+  Calendar,
+  Users,
+  Info,
+  MessageSquare,
+  Phone,
+  Clock,
+  HeartHandshake,
+} from "lucide-react";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import logo from "@/assets/masjid-AlEzz-color-h.png";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -42,7 +55,11 @@ export function Navbar() {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node) && mobileMenuOpen) {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target as Node) &&
+        mobileMenuOpen
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -75,7 +92,7 @@ export function Navbar() {
     } else {
       document.body.style.overflow = "auto";
     }
-    
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -85,30 +102,34 @@ export function Navbar() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   // Smooth scroll to top when needed
-  const scrollToSmooth = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const scrollToSmooth = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
       // Calculate offset to account for fixed header
       const headerOffset = scrolled ? 70 : 90;
       const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   return (
     <>
-      <header 
+      <header
         className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
           scrolled ? "shadow-md py-1" : "py-1 md:py-2"
         }`}
@@ -118,15 +139,17 @@ export function Navbar() {
           <nav className="flex items-center justify-between flex-wrap px-2 md:px-4">
             <div className="flex items-center flex-shrink-0 mr-3 md:mr-6">
               <Link href="/" className="flex items-center gap-1 md:gap-2">
-                <img 
-                  src={logo} 
-                  alt="Masjid Al-Ezz Logo" 
-                  className={`transition-all ${scrolled ? "h-6 md:h-8" : "h-7 md:h-10"}`} 
+                <img
+                  src={logo}
+                  alt="Masjid Al-Ezz Logo"
+                  className={`transition-all ${scrolled ? "h-6 md:h-8" : "h-7 md:h-10"}`}
                 />
                 <div>
-                  <span className={`font-serif tracking-tight text-primary transition-all ${
-                    scrolled ? "text-base md:text-lg" : "text-lg md:text-xl"
-                  }`}>
+                  <span
+                    className={`font-serif tracking-tight text-primary transition-all ${
+                      scrolled ? "text-base md:text-lg" : "text-lg md:text-xl"
+                    }`}
+                  >
                     Masjid Al-Ezz
                   </span>
                   <span className="block text-[10px] md:text-xs text-amber-500 font-medium">
@@ -135,15 +158,16 @@ export function Navbar() {
                 </div>
               </Link>
             </div>
-            
+
             <div className="block lg:hidden">
-              <Button 
+              <Button
                 variant={mobileMenuOpen ? "default" : "outline"}
                 size="sm"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`${mobileMenuOpen 
-                  ? "bg-primary text-white hover:bg-primary/90" 
-                  : "text-primary border-primary hover:bg-primary/10 hover:text-primary hover:border-primary"
+                className={`${
+                  mobileMenuOpen
+                    ? "bg-primary text-white hover:bg-primary/90"
+                    : "text-primary border-primary hover:bg-primary/10 hover:text-primary hover:border-primary"
                 } transition-all duration-300 h-8 w-8 p-0`}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
@@ -160,7 +184,7 @@ export function Navbar() {
                 </AnimatePresence>
               </Button>
             </div>
-            
+
             {/* Desktop Navigation */}
             <div className="hidden lg:flex lg:items-center lg:w-auto">
               <div className="lg:flex-grow flex items-center">
@@ -180,30 +204,27 @@ export function Navbar() {
               </div>
               <div className="lg:ml-3 flex items-center">
                 <div className="hidden lg:flex mr-4 space-x-3">
-                  <a 
-                    href="https://www.instagram.com/masjidalezz" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://www.instagram.com/masjidalezz"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary hover:text-amber-500 transition-colors text-lg"
                     aria-label="Instagram"
                   >
                     <FaInstagram />
                   </a>
-                  <a 
-                    href="https://www.youtube.com/@Masjidalezz" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://www.youtube.com/@Masjidalezz"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary hover:text-amber-500 transition-colors text-lg"
                     aria-label="YouTube"
                   >
                     <FaYoutube />
                   </a>
                 </div>
-                
-                <Link
-                  href="/donate"
-                  className="inline-block"
-                >
+
+                <Link href="/donate" className="inline-block">
                   <Button className="bg-primary hover:bg-primary/90 text-white rounded-full font-medium px-4 py-1.5 h-auto text-sm shadow-sm">
                     <HeartHandshake className="mr-1.5 h-3.5 w-3.5" /> Donate
                   </Button>
@@ -212,7 +233,7 @@ export function Navbar() {
             </div>
           </nav>
         </div>
-        
+
         {/* Mobile Navigation Overlay */}
         <AnimatePresence>
           {mobileMenuOpen && (
@@ -241,15 +262,13 @@ export function Navbar() {
                             : "hover:bg-primary/5 text-gray-800"
                         }`}
                       >
-                        <div className="mr-2.5 text-primary">
-                          {item.icon}
-                        </div>
+                        <div className="mr-2.5 text-primary">{item.icon}</div>
                         <span className="text-base">{item.label}</span>
                         <ChevronRight className="ml-auto h-4 w-4 text-gray-400" />
                       </Link>
                     </motion.div>
                   ))}
-                  
+
                   <motion.div
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -263,27 +282,29 @@ export function Navbar() {
                       <HeartHandshake className="mr-2 h-4 w-4" /> Donate Now
                     </Link>
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: (navigationItems.length + 1) * 0.05 + 0.1 }}
+                    transition={{
+                      delay: (navigationItems.length + 1) * 0.05 + 0.1,
+                    }}
                     className="mt-4 flex justify-center space-x-8"
                   >
-                    <a 
-                      href="https://www.instagram.com/masjidalezz" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="https://www.instagram.com/masjidalezz"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex flex-col items-center text-primary hover:text-amber-500 transition-colors"
                       aria-label="Instagram"
                     >
                       <FaInstagram className="text-2xl mb-1" />
                       <span className="text-xs">Instagram</span>
                     </a>
-                    <a 
-                      href="https://www.youtube.com/@Masjidalezz" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href="https://www.youtube.com/@Masjidalezz"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex flex-col items-center text-primary hover:text-amber-500 transition-colors"
                       aria-label="YouTube"
                     >
@@ -291,11 +312,13 @@ export function Navbar() {
                       <span className="text-xs">YouTube</span>
                     </a>
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: (navigationItems.length + 1) * 0.05 + 0.2 }}
+                    transition={{
+                      delay: (navigationItems.length + 1) * 0.05 + 0.2,
+                    }}
                     className="mt-6 pt-4 border-t border-gray-200 text-center text-gray-500 text-xs"
                   >
                     <p>10 Falconer Dr., Unit 8</p>

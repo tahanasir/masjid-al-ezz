@@ -20,14 +20,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Send, 
-  MessageCircle, 
-  ThumbsUp, 
-  ThumbsDown, 
-  User, 
-  Mail, 
-  Phone 
+import {
+  Send,
+  MessageCircle,
+  ThumbsUp,
+  ThumbsDown,
+  User,
+  Mail,
+  Phone,
 } from "lucide-react";
 
 // Define schema for feedback form
@@ -38,7 +38,9 @@ const feedbackSchema = z.object({
   feedbackType: z.enum(["general", "suggestion", "issue"], {
     required_error: "Please select a feedback type",
   }),
-  message: z.string().min(10, { message: "Please enter a message with at least 10 characters" }),
+  message: z
+    .string()
+    .min(10, { message: "Please enter a message with at least 10 characters" }),
   rating: z.enum(["1", "2", "3", "4", "5"], {
     required_error: "Please provide a rating",
   }),
@@ -49,7 +51,7 @@ type FeedbackFormValues = z.infer<typeof feedbackSchema>;
 export function FeedbackForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   // Initialize the form
   const form = useForm<FeedbackFormValues>({
     resolver: zodResolver(feedbackSchema),
@@ -62,7 +64,7 @@ export function FeedbackForm() {
       rating: "5",
     },
   });
-  
+
   // Set up mutation for form submission
   const feedbackMutation = useMutation({
     mutationFn: async (data: FeedbackFormValues) => {
@@ -70,7 +72,7 @@ export function FeedbackForm() {
       try {
         // In a real implementation, this would send the data to a server endpoint
         // For now, we'll simulate a successful submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         return { success: true };
       } finally {
         setIsSubmitting(false);
@@ -86,28 +88,32 @@ export function FeedbackForm() {
     onError: (error) => {
       toast({
         title: "Submission Failed",
-        description: "There was a problem submitting your feedback. Please try again.",
+        description:
+          "There was a problem submitting your feedback. Please try again.",
         variant: "destructive",
       });
     },
   });
-  
+
   // Form submission handler
   const onSubmit = (data: FeedbackFormValues) => {
     feedbackMutation.mutate(data);
   };
-  
+
   return (
     <section id="feedback" className="py-16 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold font-serif text-primary mb-2">Your Feedback</h2>
+          <h2 className="text-3xl font-bold font-serif text-primary mb-2">
+            Your Feedback
+          </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6"></div>
           <p className="max-w-xl mx-auto text-gray-600">
-            We value your input! Please share your thoughts, suggestions, or concerns to help us better serve our community.
+            We value your input! Please share your thoughts, suggestions, or
+            concerns to help us better serve our community.
           </p>
         </div>
-        
+
         <Card className="max-w-2xl mx-auto shadow-md">
           <CardHeader className="bg-primary/5 border-b">
             <CardTitle className="flex items-center gap-2 text-primary">
@@ -117,7 +123,10 @@ export function FeedbackForm() {
           </CardHeader>
           <CardContent className="pt-6">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
@@ -134,7 +143,7 @@ export function FeedbackForm() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="email"
@@ -144,14 +153,18 @@ export function FeedbackForm() {
                           <Mail className="h-4 w-4" /> Email
                         </FormLabel>
                         <FormControl>
-                          <Input placeholder="Your email address" type="email" {...field} />
+                          <Input
+                            placeholder="Your email address"
+                            type="email"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-                
+
                 <FormField
                   control={form.control}
                   name="phone"
@@ -167,7 +180,7 @@ export function FeedbackForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="feedbackType"
@@ -210,7 +223,7 @@ export function FeedbackForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -228,7 +241,7 @@ export function FeedbackForm() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="rating"
@@ -242,15 +255,23 @@ export function FeedbackForm() {
                           className="flex space-x-2"
                         >
                           {[1, 2, 3, 4, 5].map((rating) => (
-                            <FormItem key={rating} className="flex flex-col items-center space-y-1">
+                            <FormItem
+                              key={rating}
+                              className="flex flex-col items-center space-y-1"
+                            >
                               <FormControl>
-                                <RadioGroupItem value={rating.toString()} className="sr-only" />
+                                <RadioGroupItem
+                                  value={rating.toString()}
+                                  className="sr-only"
+                                />
                               </FormControl>
                               <FormLabel
                                 className={`cursor-pointer h-10 w-10 rounded-full flex items-center justify-center text-sm
-                                  ${field.value === rating.toString() 
-                                    ? 'bg-primary text-white' 
-                                    : 'bg-muted hover:bg-muted/80'}`}
+                                  ${
+                                    field.value === rating.toString()
+                                      ? "bg-primary text-white"
+                                      : "bg-muted hover:bg-muted/80"
+                                  }`}
                               >
                                 {rating}
                               </FormLabel>
@@ -265,9 +286,9 @@ export function FeedbackForm() {
                     </FormItem>
                   )}
                 />
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full bg-primary hover:bg-primary/90"
                   disabled={isSubmitting}
                 >

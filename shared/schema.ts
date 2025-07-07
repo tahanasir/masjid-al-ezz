@@ -1,4 +1,11 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  text,
+  serial,
+  integer,
+  boolean,
+  timestamp,
+} from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -48,7 +55,9 @@ export const programs = pgTable("programs", {
   image: text("image"),
   location: text("location").default("Main Prayer Hall"),
   cost: text("cost"), // Can be null for free programs
-  registrationRequired: boolean("registration_required").notNull().default(true),
+  registrationRequired: boolean("registration_required")
+    .notNull()
+    .default(true),
   startDate: timestamp("start_date"), // When the program begins
   endDate: timestamp("end_date"), // When the program ends
   isActive: boolean("is_active").notNull().default(true),
@@ -69,7 +78,9 @@ export const contactMessages = pgTable("contact_messages", {
   isRead: boolean("is_read").notNull().default(false),
 });
 
-export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
+export const insertContactMessageSchema = createInsertSchema(
+  contactMessages,
+).omit({
   id: true,
   createdAt: true,
   isRead: true,
