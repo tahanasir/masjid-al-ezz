@@ -40,7 +40,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { DollarSign } from "lucide-react";
+import { CircleDollarSign } from "lucide-react";
 
 // Registration form schema
 const registrationSchema = z.object({
@@ -313,15 +313,8 @@ export function Programs() {
                         <span className="text-sm">TIME:</span>
                         <span className="text-sm ml-auto">{program.time}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-primary font-semibold mb-1">
-                        <Users className="h-4 w-4" />
-                        <span className="text-sm">LED BY:</span>
-                        <span className="text-sm ml-auto">
-                          {program.instructor}
-                        </span>
-                      </div>
                       <div className="flex items-center gap-2 text-primary font-semibold">
-                        <DollarSign className="h-4 w-4" />
+                        <CircleDollarSign className="h-4 w-4" />
                         <span className="text-sm">COST:</span>
                         <span className="text-sm ml-auto">{program.cost}</span>
                       </div>

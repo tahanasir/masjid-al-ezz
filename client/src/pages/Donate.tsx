@@ -155,7 +155,7 @@ export default function Donate() {
               <div className="p-4 bg-primary/5 rounded-lg border border-primary/10 shadow-sm">
                 <h4 className="font-bold text-primary mb-2">Tax Benefits</h4>
                 <p className="text-gray-600">
-                  Masjid Al-Ezz is a registered charitable organization. All
+                  Peel Muslim Community Center is a charitable organization. All
                   donations are eligible for tax receipts, which can be used to
                   claim deductions on your income tax return.
                 </p>

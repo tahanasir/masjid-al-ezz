@@ -4,7 +4,7 @@ import { Program } from "@shared/schema";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Users } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, CircleDollarSign } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -166,14 +166,14 @@ export default function ProgramsPage() {
                             <Clock className="h-4 w-4" />
                             <span className="text-sm">TIME:</span>
                             <span className="text-sm ml-auto">
-                              {program.time || "Contact us"}
+                              {program.time}
                             </span>
                           </div>
                           <div className="flex items-center gap-2 text-primary font-semibold mb-1">
-                            <Users className="h-4 w-4" />
-                            <span className="text-sm">LED BY:</span>
+                            <CircleDollarSign className="h-4 w-4" />
+                            <span className="text-sm">COST:</span>
                             <span className="text-sm ml-auto">
-                              {program.instructor || "Masjid Staff"}
+                              {program.cost}
                             </span>
                           </div>
                         </div>

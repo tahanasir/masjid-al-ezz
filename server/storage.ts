@@ -125,62 +125,37 @@ export class MemStorage implements IStorage {
   private initializeData() {
     // Initialize with the current active programs from the roadmap (boxing, quran, ilm & chill)
 
-    // Program 1: PMCC Sports (Boxing)
     this.createProgram({
-      title: "PMCC Sports - Brother's Boxing",
+      title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
-        "Sports program promoting health and unity. A structured boxing program for youth that teaches discipline, fitness, and self-defense in a safe, Islamic environment.",
+        "Sports program promoting health and unity. A structured boxing program for youth that teaches discipline, fitness, and self-defense in a safe, Islamic environment. First two classes are complimentary. Only open to brothers aged 14 and above.",
       schedule: "Every Saturday",
       time: "4:00 PM - 5:30 PM",
-      instructor: "Coach Sabber",
       image:
         "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      location: "Community Center Hall",
       cost: "$50/month",
-      registrationRequired: true,
-      startDate: new Date(new Date().getFullYear(), new Date().getMonth(), 5), // 5th of current month
-      endDate: new Date(new Date().getFullYear(), new Date().getMonth() + 3, 5), // 5th, 3 months from now
-      isActive: true,
     });
 
-    // Program 2: Quran Program
     this.createProgram({
-      title: "Quran Program",
+      title: "Qur'an Reading Program for Non-Arabic Speakers",
       description:
-        "Transformation through the Quran. A structured Quran memorization and study program focusing on proper tajweed, understanding, and application of Quranic teachings.",
-      schedule: "Every Saturday & Sunday",
-      time: "10:00 AM - 12:00 PM",
-      instructor: "Sheikh Ahmed",
+        "A comprehensive Qur'an reading course for non-Arabic speakers, focusing on correct pronunciation. Open to both brothers and sisters. Level 1: Al-Nooraniyah (books provided). Level 2: common words and root meanings.",
+      schedule: "Every Saturday",
+      time: "4:00 PM - 5:00 PM",
       image:
         "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      location: "Classroom 1 (2nd Floor)",
-      cost: "$60/month",
-      registrationRequired: true,
-      startDate: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // 1st of current month
-      endDate: new Date(new Date().getFullYear(), new Date().getMonth() + 3, 1), // 1st, 3 months from now
-      isActive: true,
+      cost: "$35/month",
     });
 
-    // Program 3: PMCC VM (Visionary Muslimahs)
     this.createProgram({
-      title: "PMCC VM (Visionary Muslimahs)",
+      title: "Tajweed & Hifdh Class (Sisters Only)",
       description:
-        "Empowering young sisters with leadership skills. A comprehensive program for Muslim women covering leadership, Islamic knowledge, and personal development.",
-      schedule: "Every Tuesday",
-      time: "6:30 PM - 8:00 PM",
-      instructor: "Sister Aisha",
+        "Quran tajweed and memorization instruction led by a certified teacher with a sanad and over 20 years of experience.",
+      schedule: "Sundays to Thursdays",
+      time: "11:00 AM - 3:00 PM",
       image:
-        "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      location: "Classroom 3 (2nd Floor)",
-      cost: "$50/month",
-      registrationRequired: true,
-      startDate: new Date(new Date().getFullYear(), new Date().getMonth(), 15), // 15th of current month
-      endDate: new Date(
-        new Date().getFullYear(),
-        new Date().getMonth() + 2,
-        15,
-      ), // 15th, 2 months from now
-      isActive: true,
+        "https://motionarray.imgix.net/motion-array-1512327-E08oh0yQoX-high_0011.jpg",
+      cost: "See registration form",
     });
 
     // Add sample events

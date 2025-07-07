@@ -49,7 +49,7 @@ export function Donate() {
 
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-500">
-                  Masjid Al-Ezz is a registered charitable organization. All
+                  Peel Muslim Community Center is a registered charitable organization. All
                   donations are tax-deductible.
                 </p>
               </div>
