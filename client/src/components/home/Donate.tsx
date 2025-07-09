@@ -49,8 +49,8 @@ export function Donate() {
 
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-500">
-                  Peel Muslim Community Center is a registered charitable organization. All
-                  donations are tax-deductible.
+                  Peel Muslim Community Center is a registered charitable
+                  organization. All donations are tax-deductible.
                 </p>
               </div>
             </div>

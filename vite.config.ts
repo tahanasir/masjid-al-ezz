@@ -6,9 +6,7 @@ import { fileURLToPath, URL } from "url";
 const projectRootDir = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
-  plugins: [
-    react()
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(projectRootDir, "client/src"),
