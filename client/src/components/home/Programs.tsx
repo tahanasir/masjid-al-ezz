@@ -96,11 +96,7 @@ export function Programs() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {programs?.map((program, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover="hover"
-            >
+            <motion.div key={index} variants={cardVariants} whileHover="hover">
               <Card className="overflow-hidden h-full flex flex-col border-transparent shadow-md hover:shadow-xl transition-shadow">
                 <div className="h-40 overflow-hidden relative">
                   <img

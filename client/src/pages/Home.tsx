@@ -2,13 +2,11 @@ import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
-import { Announcements } from "@/components/home/Announcements";
 import { PrayerTimes } from "@/components/home/PrayerTimes";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { Programs } from "@/components/home/Programs";
 import { Events } from "@/components/home/Events";
 import { Donate } from "@/components/home/Donate";
-import { NewsTicker } from "@/components/home/NewsTicker";
 import { FeedbackForm } from "@/components/home/FeedbackForm";
 import { UserIntentGuide } from "@/components/home/UserIntentGuide";
 import { Link } from "wouter";
@@ -27,7 +25,6 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <NewsTicker />
       <main>
         <section className="relative">
           {/* Background with overlay */}

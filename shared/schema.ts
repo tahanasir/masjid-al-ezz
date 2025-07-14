@@ -9,19 +9,6 @@ import {
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-// Announcement Schema
-export const announcements = pgTable("announcements", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  content: text("content").notNull(),
-  date: timestamp("date").notNull(),
-  isActive: boolean("is_active").notNull().default(true),
-});
-
-export const insertAnnouncementSchema = createInsertSchema(announcements).omit({
-  id: true,
-});
-
 // Event Schema
 export const events = pgTable("events", {
   id: serial("id").primaryKey(),
@@ -118,9 +105,6 @@ export const insertUserSchema = createInsertSchema(users).pick({
 // Type Exports
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
-
-export type InsertAnnouncement = z.infer<typeof insertAnnouncementSchema>;
-export type Announcement = typeof announcements.$inferSelect;
 
 export type InsertEvent = z.infer<typeof insertEventSchema>;
 export type Event = typeof events.$inferSelect;
