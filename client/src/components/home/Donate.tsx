@@ -27,7 +27,7 @@ export function Donate() {
               <h3 className="text-xl font-bold text-primary mb-3 text-center">
                 Help Pay Off Our Masjid Loan
               </h3>
-              <p className="text-gray-600 mb-6 text-center">
+              <p className="text-gray-100 mb-6 text-center">
                 Your contribution helps secure the future of our community
                 center and supports our ongoing programs.
               </p>
@@ -48,7 +48,7 @@ export function Donate() {
               </div>
 
               <div className="mt-4 text-center">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-100">
                   Peel Muslim Community Center is a registered charitable
                   organization. All donations are tax-deductible.
                 </p>

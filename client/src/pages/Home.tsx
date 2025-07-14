@@ -118,32 +118,6 @@ export default function Home() {
         </div>
 
         <Donate />
-
-        {/* Feedback Form section */}
-        <div className="bg-gray-50">
-          <div className="container mx-auto px-6 py-12">
-            <div className="max-w-2xl mx-auto">
-              <div className="mt-8 text-center">
-                <Link href="/about" className="mr-4">
-                  <Button
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary/5 mb-3 sm:mb-0"
-                  >
-                    Learn About Us <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary/5"
-                  >
-                    Contact Details <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
       <Footer />
 
