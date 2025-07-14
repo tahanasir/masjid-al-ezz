@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { Programs } from "@/components/home/Programs";
 import { Donate } from "@/components/home/Donate";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -60,7 +62,36 @@ export default function Home() {
           </div>
         </section>
 
-        <Programs />
+        <section
+          id="programs"
+          className="py-20 bg-gradient-to-b from-white to-primary/5"
+        >
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between mb-16">
+              <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+                <h2 className="text-4xl font-bold font-serif text-primary mb-4">
+                  Weekly Programs
+                </h2>
+                <div className="w-24 h-1 bg-amber-400 lg:mx-0 mx-auto mb-6"></div>
+                <p className="text-gray-600 max-w-xl lg:pr-10">
+                  Enrich your spiritual journey and build meaningful
+                  connections. Our regular programs are designed to nurture
+                  faith, education, and community bonds for all ages.
+                </p>
+              </div>
+            </div>
+
+            <Programs />
+
+            <div className="mt-16 text-center">
+              <a href="/programs">
+                <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-2 h-12 text-base shadow-lg">
+                  View All Programs <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
         <Donate />
       </main>
       <Footer />
