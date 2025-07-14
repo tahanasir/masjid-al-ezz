@@ -8,7 +8,6 @@ import { Programs } from "@/components/home/Programs";
 import { Events } from "@/components/home/Events";
 import { Donate } from "@/components/home/Donate";
 import { FeedbackForm } from "@/components/home/FeedbackForm";
-import { UserIntentGuide } from "@/components/home/UserIntentGuide";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -120,9 +119,6 @@ export default function Home() {
         </div>
 
         <Donate />
-
-        {/* User intent guide - helps users find what they need */}
-        <UserIntentGuide />
 
         {/* Feedback Form section */}
         <div className="bg-gray-50">
