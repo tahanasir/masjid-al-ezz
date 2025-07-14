@@ -100,17 +100,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Programs section with "See All Programs" button */}
-        <div className="pb-4">
-          <Programs />
-          <div className="text-center mt-8">
-            <Link href="/programs">
-              <Button className="bg-primary hover:bg-primary/90 text-white">
-                See All Programs <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
+        <Programs />
 
         {/* Events section with "View Full Calendar" button */}
         <div className="pb-8">
