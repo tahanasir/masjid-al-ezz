@@ -7,7 +7,6 @@ import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { Programs } from "@/components/home/Programs";
 import { Events } from "@/components/home/Events";
 import { Donate } from "@/components/home/Donate";
-import { FeedbackForm } from "@/components/home/FeedbackForm";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -124,7 +123,6 @@ export default function Home() {
         <div className="bg-gray-50">
           <div className="container mx-auto px-6 py-12">
             <div className="max-w-2xl mx-auto">
-              <FeedbackForm />
               <div className="mt-8 text-center">
                 <Link href="/about" className="mr-4">
                   <Button
