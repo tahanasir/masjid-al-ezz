@@ -57,7 +57,7 @@ export default function About() {
         </div>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary to-primary/80 text-white py-16 md:py-24 mt-4">
+        <section className="bg-gradient-to-b from-primary to-primary/80 text-white py-16 md:py-24">
           <div className="container mx-auto px-6 text-center">
             {/* Desktop navigation breadcrumb - hidden on mobile */}
             <div className="hidden lg:flex items-center justify-center mb-6 text-white/80">

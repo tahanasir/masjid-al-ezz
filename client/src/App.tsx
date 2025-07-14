@@ -4,8 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import Events from "@/pages/Events";
-import EventDetail from "@/pages/EventDetail";
 import EventCalendar from "@/pages/EventCalendar";
 import Programs from "@/pages/Programs";
 import ProgramDetail from "@/pages/ProgramDetail";
@@ -32,9 +30,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/prayer-times" component={PrayerTimes} />
-      <Route path="/events/calendar" component={EventCalendar} />
-      <Route path="/events/:id" component={EventDetail} />
-      <Route path="/events" component={Events} />
+      <Route path="/calendar" component={EventCalendar} />
       <Route path="/calendar" component={EventCalendar} />
       <Route path="/programs/:id" component={ProgramDetail} />
       <Route path="/programs" component={Programs} />

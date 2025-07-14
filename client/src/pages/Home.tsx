@@ -1,25 +1,10 @@
-import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/home/Hero";
-import { PrayerTimes } from "@/components/home/PrayerTimes";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { Programs } from "@/components/home/Programs";
-import { Events } from "@/components/home/Events";
 import { Donate } from "@/components/home/Donate";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ArrowRight, Calendar, Users, X } from "lucide-react";
 
 export default function Home() {
-  const [isPrayerTimesOpen, setIsPrayerTimesOpen] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -76,7 +61,6 @@ export default function Home() {
         </section>
 
         <Programs />
-        <Events />
         <Donate />
       </main>
       <Footer />

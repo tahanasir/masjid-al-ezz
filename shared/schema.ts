@@ -9,28 +9,6 @@ import {
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-// Event Schema
-export const events = pgTable("events", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  date: timestamp("date").notNull(),
-  endDate: timestamp("end_date").notNull(),
-  startTime: text("start_time").notNull().default("09:00"),
-  endTime: text("end_time").notNull().default("17:00"),
-  location: text("location").notNull(),
-  organizer: text("organizer"),
-  isActive: boolean("is_active").notNull().default(true),
-  // Type field to distinguish between different event types
-  eventType: text("event_type").notNull().default("special"), // "regular", "special"
-  isRecurring: boolean("is_recurring").notNull().default(false), // Weekly events like Jumaa
-  recurringDay: text("recurring_day"), // Monday, Tuesday, etc.
-});
-
-export const insertEventSchema = createInsertSchema(events).omit({
-  id: true,
-});
-
 // Program Schema (requires registration, may have costs)
 export const programs = pgTable("programs", {
   id: serial("id").primaryKey(),
@@ -105,9 +83,6 @@ export const insertUserSchema = createInsertSchema(users).pick({
 // Type Exports
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
-
-export type InsertEvent = z.infer<typeof insertEventSchema>;
-export type Event = typeof events.$inferSelect;
 
 export type InsertProgram = z.infer<typeof insertProgramSchema>;
 export type Program = typeof programs.$inferSelect;

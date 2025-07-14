@@ -25,7 +25,6 @@ const navigationItems = [
   { path: "/", label: "Home", icon: <Home size={18} /> },
   { path: "/prayer-times", label: "Prayer Times", icon: <Clock size={18} /> },
   { path: "/programs", label: "Programs", icon: <Users size={18} /> },
-  { path: "/events", label: "Events", icon: <Calendar size={18} /> },
   { path: "/calendar", label: "Calendar", icon: <Calendar size={18} /> },
   { path: "/about", label: "About", icon: <Info size={18} /> },
   { path: "/donate", label: "Donate", icon: <HeartHandshake size={18} /> },
