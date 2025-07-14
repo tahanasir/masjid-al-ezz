@@ -57,26 +57,6 @@ export default function Home() {
                   building our community.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2 justify-center mt-2">
-                <Button
-                  onClick={() => setIsPrayerTimesOpen(true)}
-                  className="bg-amber-400 hover:bg-amber-500 text-primary rounded-full text-xs md:text-sm px-3 py-1 h-8 md:h-auto"
-                >
-                  <Calendar className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />{" "}
-                  Prayer Times
-                </Button>
-                <a href="/programs">
-                  <Button className="bg-primary hover:bg-primary/90 text-white rounded-full text-xs md:text-sm px-3 py-1 h-8 md:h-auto">
-                    <Users className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />{" "}
-                    Programs
-                  </Button>
-                </a>
-                <a href="/donate">
-                  <Button className="bg-white text-primary hover:bg-gray-100 rounded-full text-xs md:text-sm px-3 py-1 h-8 md:h-auto">
-                    Support Us
-                  </Button>
-                </a>
-              </div>
             </div>
 
             {/* Prayer Times - Full Width */}
@@ -96,57 +76,10 @@ export default function Home() {
         </section>
 
         <Programs />
-
-        {/* Events section with "View Full Calendar" button */}
-        <div className="pb-8">
-          <Events />
-          <div className="text-center mt-8">
-            <Link href="/events">
-              <Button className="bg-amber-500 hover:bg-amber-600 text-white mr-4">
-                Browse All Events <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/calendar">
-              <Button
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/5"
-              >
-                View Full Calendar <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-
+        <Events />
         <Donate />
       </main>
       <Footer />
-
-      {/* Prayer Times Popup */}
-      <Dialog open={isPrayerTimesOpen} onOpenChange={setIsPrayerTimesOpen}>
-        <DialogContent className="max-w-2xl w-full mx-auto p-0 overflow-hidden">
-          <DialogHeader className="p-6 pb-4">
-            <DialogTitle className="text-xl font-serif text-primary">
-              Prayer Times
-            </DialogTitle>
-          </DialogHeader>
-          <div className="px-6 pb-6">
-            <div className="w-full min-h-[500px] rounded-lg overflow-hidden">
-              <MasjidBoxWidget />
-            </div>
-            <div className="mt-4 text-center">
-              <Link href="/prayer-times">
-                <Button
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/5"
-                  onClick={() => setIsPrayerTimesOpen(false)}
-                >
-                  View Full Prayer Times Page
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
