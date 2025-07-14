@@ -6,7 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Link } from "wouter";
 
 // Import the masjid logo
-import masjidLogo from "@assets/masjid-AlEzz-color-h.png";
+import logo from "@assets/masjid-AlEzz-color-h.png";
 
 // Imam data
 const imams = [
@@ -118,7 +118,7 @@ export default function About() {
               <div className="lg:w-1/2">
                 <div className="relative">
                   <img
-                    src={masjidLogo}
+                    src={logo}
                     alt="Masjid Al-Ezz Logo"
                     className="w-full max-w-md mx-auto"
                   />

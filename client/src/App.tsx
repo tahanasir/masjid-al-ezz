@@ -15,7 +15,6 @@ import Donate from "@/pages/Donate";
 import Contact from "@/pages/Contact";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
-import { QuickStartGuide } from "@/components/home/QuickStartGuide";
 
 // This helps simulate browser scrolling behavior between pages
 function ScrollToTop() {
@@ -52,7 +51,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router />
-      <QuickStartGuide />
       <Toaster />
     </QueryClientProvider>
   );

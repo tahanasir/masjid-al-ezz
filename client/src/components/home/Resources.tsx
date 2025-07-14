@@ -125,7 +125,7 @@ export function Resources() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="p-10 text-center relative">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/mosque.png')] opacity-10"></div>
+            <div className="absolute inset-0 opacity-10"></div>
             <h3 className="text-2xl font-serif text-white mb-5 relative z-10 font-bold">
               Weekly Reminder
             </h3>

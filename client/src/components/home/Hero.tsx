@@ -5,6 +5,7 @@ import { usePrayerTimes } from "@/hooks/usePrayerTimes";
 import { getHijriDate, getNextPrayer } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Clock, Moon, Sun, Sunrise, Sunset, Users } from "lucide-react";
+import logo from "@/assets/masjid-AlEzz-color-h.png";
 
 export function Hero() {
   const { data: prayerTimes, isLoading, error } = usePrayerTimes();
@@ -169,7 +170,7 @@ export function Hero() {
               <div className="bg-primary py-4 px-6 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary-800/20 opacity-10">
                   <img
-                    src="/attached_assets/masjid-AlEzz-color-h.png"
+                    src={logo}
                     alt=""
                     className="w-full h-full object-contain opacity-5"
                   />
