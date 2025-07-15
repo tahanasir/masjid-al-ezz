@@ -285,19 +285,6 @@ export function Navbar() {
                       <span className="text-xs">YouTube</span>
                     </a>
                   </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      delay: (navigationItems.length + 1) * 0.05 + 0.2,
-                    }}
-                    className="mt-6 pt-4 border-t border-gray-200 text-center text-gray-500 text-xs"
-                  >
-                    <p>10 Falconer Dr., Unit 8</p>
-                    <p>Mississauga, ON L5N 3L8</p>
-                    <p className="mt-2">© 2025 Masjid Al-Ezz</p>
-                  </motion.div>
                 </div>
               </div>
             </motion.div>

@@ -15,19 +15,6 @@ export default function Donate() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Back to Home button - visible on mobile and tablets */}
-        <div className="container mx-auto px-6 pt-4 md:pt-6 lg:hidden">
-          <Link href="/">
-            <Button
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/5 flex items-center rounded-full"
-            >
-              <ChevronLeft className="mr-1 h-4 w-4" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
-
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary to-primary/80 text-white py-16 md:py-24">
           <div className="container mx-auto px-6 text-center">
