@@ -10,20 +10,16 @@ import {
   Calendar,
   Users,
   Info,
-  MessageSquare,
   Phone,
-  Clock,
   HeartHandshake,
 } from "lucide-react";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import logo from "@/assets/masjid-AlEzz-color-h.png";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Define navigation items
 const navigationItems = [
   { path: "/", label: "Home", icon: <Home size={18} /> },
-  { path: "/prayer-times", label: "Prayer Times", icon: <Clock size={18} /> },
   { path: "/programs", label: "Programs", icon: <Users size={18} /> },
   { path: "/calendar", label: "Calendar", icon: <Calendar size={18} /> },
   { path: "/about", label: "About", icon: <Info size={18} /> },
@@ -35,7 +31,6 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const isMobile = useIsMobile();
   const [location] = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -103,27 +98,6 @@ export function Navbar() {
       top: 0,
       behavior: "smooth",
     });
-  };
-
-  // Smooth scroll to top when needed
-  const scrollToSmooth = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string,
-  ) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      // Calculate offset to account for fixed header
-      const headerOffset = scrolled ? 70 : 90;
-      const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
