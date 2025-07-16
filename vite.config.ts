@@ -9,14 +9,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(projectRootDir, "client/src"),
-      "@assets": path.resolve(projectRootDir, "client/src/assets"),
+      "@": path.resolve(projectRootDir, "src"),
+      "@assets": path.resolve(projectRootDir, "src/assets"),
     },
   },
-  root: path.resolve(projectRootDir, "client"),
   build: {
-    outDir: path.resolve(projectRootDir, "dist/public"),
+    outDir: path.resolve(projectRootDir, "dist"),
     emptyOutDir: true,
   },
-  base: "/masjid-al-ezz/"
+  base: "/masjid-al-ezz/",
 });
