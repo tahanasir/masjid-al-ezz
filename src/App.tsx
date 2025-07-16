@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Router, Route } from "wouter";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import EventCalendar from "@/pages/EventCalendar";
@@ -9,7 +9,7 @@ import Contact from "@/pages/Contact";
 
 function App() {
   return (
-    <Switch>
+    <Router base="/masjid-al-ezz">
       <Route path="/" component={Home} />
       <Route path="/calendar" component={EventCalendar} />
       <Route path="/programs" component={Programs} />
@@ -17,7 +17,7 @@ function App() {
       <Route path="/donate" component={Donate} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
-    </Switch>
+    </Router>
   );
 }
 
