@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp staticwebapp.config.json dist/",
     "preview": "vite preview",
     "format": "prettier --write ."
   },
