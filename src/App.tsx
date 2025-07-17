@@ -9,7 +9,7 @@ import Contact from "@/pages/Contact";
 
 function App() {
   return (
-    <Router base="/masjid-al-ezz">
+    <Router base="/">
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/calendar" component={EventCalendar} />
