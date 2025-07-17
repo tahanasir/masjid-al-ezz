@@ -35,7 +35,7 @@ export default function Home() {
               <div className="max-w-md mx-auto">
                 <p className="text-white text-base md:text-lg">
                   <span className="font-bold text-amber-300">
-                    Masjid AlEzz has opened, Alhamdulillah
+                    Masjid Al-Ezz has opened, Alhamdulillah
                   </span>
                   <br />
                   Your generous support turned a vision into reality.

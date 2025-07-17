@@ -67,34 +67,10 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#home"
+                  href="/"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#prayer-times"
-                  className="text-white/80 hover:text-white transition-colors"
-                >
-                  Prayer Times
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#programs"
-                  className="text-white/80 hover:text-white transition-colors"
-                >
-                  Programs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#events"
-                  className="text-white/80 hover:text-white transition-colors"
-                >
-                  Events
                 </Link>
               </li>
               <li>
@@ -107,15 +83,23 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#resources"
+                  href="/programs"
                   className="text-white/80 hover:text-white transition-colors"
                 >
-                  Resources
+                  Programs
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#donate"
+                  href="/calendar"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  Calendar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/donate"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   Donate
@@ -123,7 +107,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   Contact
