@@ -14,8 +14,8 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
         "A structured boxing program for youth that teaches discipline and self-defense in a safe environment. First two classes are complimentary.",
-      schedule: "Every Saturday",
-      time: "4:00 PM - 5:30 PM",
+      schedule: "Every Friday",
+      time: "5:45 PM - 7:15 PM",
       image:
         "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "$50/month",
