@@ -154,8 +154,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 h-80">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
                 <div className="flex flex-col h-full md:flex-row">
                   <div className="md:w-1/3">
                     <img
@@ -180,9 +180,9 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 h-80">
+              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
                 <div className="flex flex-col h-full md:flex-row">
-                  <div className="md:w-2/3 p-6 text-right">
+                  <div className="md:w-2/3 p-6 md:text-right">
                     <h3 className="text-xl font-bold text-primary mb-4">
                       Sheikh Abdulaziz Rasoul
                     </h3>
