@@ -17,5 +17,5 @@ export default defineConfig({
     outDir: path.resolve(projectRootDir, "dist"),
     emptyOutDir: true,
   },
-  base: "/",
+  base: "/masjid-al-ezz",
 });
