@@ -3,6 +3,7 @@ import { AlertCircle } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function NotFound() {
   return (
@@ -19,9 +20,9 @@ export default function NotFound() {
               Sorry, we couldn't find the page you're looking for.
             </p>
             <div className="flex justify-center gap-4">
-              <a href="/">
+              <Link href="/">
                 <Button>Go Home</Button>
-              </a>
+              </Link>
               <Button variant="outline" onClick={() => window.history.back()}>
                 Go Back
               </Button>

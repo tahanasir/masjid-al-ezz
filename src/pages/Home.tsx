@@ -5,6 +5,7 @@ import { Programs } from "@/components/home/Programs";
 import { Donate } from "@/components/home/Donate";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -83,11 +84,11 @@ export default function Home() {
             <Programs limit={6} shuffle />
 
             <div className="mt-16 text-center">
-              <a href="/programs">
+              <Link href="/programs">
                 <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-2 h-12 text-base shadow-lg">
                   View All Programs <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
