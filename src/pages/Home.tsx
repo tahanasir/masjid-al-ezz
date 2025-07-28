@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { Programs } from "@/components/home/Programs";
 import { Donate } from "@/components/home/Donate";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 
 export default function Home() {
   return (
@@ -48,16 +48,12 @@ export default function Home() {
 
             {/* Prayer Times - Full Width */}
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl overflow-hidden h-full">
-                <div className="bg-primary py-2 px-3 text-center">
-                  <h2 className="text-base md:text-lg font-serif text-white font-semibold">
-                    Today's Prayer Times
-                  </h2>
-                </div>
-                <div className="p-2 md:p-3 min-h-[33.5rem]">
-                  <MasjidBoxWidget />
-                </div>
+              <div className="bg-primary py-2 px-3 text-center">
+                <h2 className="text-base md:text-lg font-serif text-white font-semibold">
+                  Today's Prayer Times
+                </h2>
               </div>
+              <MasjidBoxWidget />
             </div>
           </div>
         </section>
