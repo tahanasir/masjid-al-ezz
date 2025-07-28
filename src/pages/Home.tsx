@@ -47,7 +47,7 @@ export default function Home() {
             </div>
 
             {/* Prayer Times - Full Width */}
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto rounded-sm md:rounded-xl overflow-hidden">
               <div className="bg-primary py-2 px-3 text-center">
                 <h2 className="text-base md:text-lg font-serif text-white font-semibold">
                   Today's Prayer Times
