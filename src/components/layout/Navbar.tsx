@@ -13,7 +13,6 @@ import {
   Phone,
   HeartHandshake,
 } from "lucide-react";
-import { FaYoutube, FaInstagram } from "react-icons/fa";
 import logo from "@/assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -28,36 +27,8 @@ const navigationItems = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const [location] = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
-
-  // Handle scroll events for sticky header styling and scroll-to-top button
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setShowScrollTop(scrollPosition > 500);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(event.target as Node) &&
-        mobileMenuOpen
-      ) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [mobileMenuOpen]);
 
   // Close mobile menu when navigating
   useEffect(() => {
@@ -209,36 +180,6 @@ export function Navbar() {
                       className="flex items-center justify-center w-full py-3 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
                     >
                       <HeartHandshake className="mr-2 h-4 w-4" /> Donate Now
-                    </a>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{
-                      delay: (navigationItems.length + 1) * 0.05 + 0.1,
-                    }}
-                    className="mt-4 flex justify-center space-x-8"
-                  >
-                    <a
-                      href="https://www.instagram.com/masjidalezz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center text-primary hover:text-amber-500 transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <FaInstagram className="text-2xl mb-1" />
-                      <span className="text-xs">Instagram</span>
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@Masjidalezz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center text-primary hover:text-amber-500 transition-colors"
-                      aria-label="YouTube"
-                    >
-                      <FaYoutube className="text-2xl mb-1" />
-                      <span className="text-xs">YouTube</span>
                     </a>
                   </motion.div>
                 </div>

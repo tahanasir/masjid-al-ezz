@@ -1,91 +1,11 @@
-import { Link } from "wouter";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-} from "react-icons/fa";
-import { FaPaperPlane } from "react-icons/fa";
-import logo from "@/assets/logo.png";
-
 export function Footer() {
   return (
     <footer className="bg-primary text-white">
-      <div className="container mx-auto px-6 pt-12 pb-6">
-        <div className="flex flex-col xl:flex-row gap-8 mb-8">
-          <div>
-            <div className="flex items-center mb-4">
-              <img
-                src={logo}
-                alt="Masjid Al-Ezz Logo"
-                className="h-10 mr-3 bg-white p-1 rounded"
-              />
-              <span className="font-serif text-xl">Masjid Al-Ezz</span>
-            </div>
-            <p className="text-white/80 mb-4 max-w-lg">
-              Peel Muslim Community Center dedicated to serving the spiritual,
-              educational, and social needs of Muslims in our community.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-serif text-lg mb-4">Contact Information</h4>
-            <ul className="space-y-3 text-white/80">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="mt-1 mr-3 text-white" />
-                <a
-                  href="https://maps.app.goo.gl/ybXXUJPneiZbreGG8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <p>10 Falconer Dr., Unit 8, Mississauga, ON L5N 3L8</p>
-                </a>
-              </li>
-              <li className="flex items-center">
-                <FaPhoneAlt className="mr-3 text-white" />
-                <span>
-                  <a href="tel:+16478933049">(647) 893-3049</a>
-                </span>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="mr-3 text-white" />
-                <span>
-                  <a href="mailto:info@masjidalezz.com">info@masjidalezz.com</a>
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif text-lg mb-4">Subscribe to Newsletter</h4>
-            <p className="text-white/80 mb-4">
-              Receive updates on prayer times, events, and community news.
-            </p>
-            <form className="flex">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 border-0"
-              />
-              <Button
-                type="submit"
-                className="bg-white text-primary hover:bg-white/90 rounded-l-none"
-              >
-                <FaPaperPlane />
-              </Button>
-            </form>
-          </div>
-        </div>
-
-        <div className="border-t border-white/20 pt-6 mt-8 text-center">
-          <p className="text-white/80 text-sm">
-            &copy; {new Date().getFullYear()} Masjid Al-Ezz. All rights
-            reserved.
-          </p>
-        </div>
+      <div className="px-6 pb-6 mx-auto border-t border-white/20 pt-6 text-center">
+        <p className="text-white/80 text-sm">
+          Copyright &copy; {new Date().getFullYear()} Masjid Al-Ezz. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );
