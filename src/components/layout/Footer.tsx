@@ -118,21 +118,28 @@ export function Footer() {
 
           <div>
             <h4 className="font-serif text-lg mb-4">Contact Information</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-white/80">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-3 text-white" />
-                <span className="text-white/80">
-                  10 Falconer Dr., Unit 8<br />
-                  Mississauga, ON L5N 3L8
-                </span>
+                <a
+                  href="https://maps.app.goo.gl/ybXXUJPneiZbreGG8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>10 Falconer Dr., Unit 8, Mississauga, ON L5N 3L8</p>
+                </a>
               </li>
               <li className="flex items-center">
                 <FaPhoneAlt className="mr-3 text-white" />
-                <span className="text-white/80">(905) 812-8786</span>
+                <span>
+                  <a href="tel:+16478933049">(647) 893-3049</a>
+                </span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-3 text-white" />
-                <span className="text-white/80">info@masjidalezz.com</span>
+                <span>
+                  <a href="mailto:info@masjidalezz.com">info@masjidalezz.com</a>
+                </span>
               </li>
             </ul>
           </div>

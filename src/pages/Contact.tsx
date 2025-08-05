@@ -47,11 +47,13 @@ export default function Contact() {
                       <MapPin className="h-6 w-6" />
                     </div>
                     <h3 className="font-bold text-gray-800 mb-2">Address</h3>
-                    <p className="text-gray-600 mb-1">
-                      10 Falconer Dr., Unit 8
-                    </p>
-                    <p className="text-gray-600">Mississauga, ON L5N 3L8</p>
-                    <p className="text-gray-600">Canada</p>
+                    <a
+                      href="https://maps.app.goo.gl/ybXXUJPneiZbreGG8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p>10 Falconer Dr., Unit 8, Mississauga, ON L5N 3L8</p>
+                    </a>
                   </div>
 
                   <div className="text-center">
@@ -59,9 +61,8 @@ export default function Contact() {
                       <Phone className="h-6 w-6" />
                     </div>
                     <h3 className="font-bold text-gray-800 mb-2">Phone</h3>
-                    <p className="text-gray-600">(905) 555-1234</p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Office hours: 10 AM - 6 PM
+                    <p>
+                      <a href="tel:+16478933049">(647) 893-3049</a>
                     </p>
                   </div>
 
@@ -70,8 +71,11 @@ export default function Contact() {
                       <Mail className="h-6 w-6" />
                     </div>
                     <h3 className="font-bold text-gray-800 mb-2">Email</h3>
-                    <p className="text-gray-600">info@masjidalezz.ca</p>
-                    <p className="text-gray-600 mt-1">imam@masjidalezz.ca</p>
+                    <p>
+                      <a href="mailto:info@masjidalezz.ca">
+                        info@masjidalezz.ca
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -88,14 +92,13 @@ export default function Contact() {
               </h2>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2635273475147!2d-79.7563!3d43.6372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b41a05cba7d61%3A0xb8abc21b3e54a366!2s10%20Falconer%20Dr%20Unit%208%2C%20Mississauga%2C%20ON%20L5N%203L8%2C%20Canada!5e0!3m2!1sen!2sus!4v1654862911071!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1826.7358356675502!2d-79.7261052!3d43.5926609!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b41c148b3ae11%3A0xf38028f30b005519!2sMasjid%20Al-Ezz!5e1!3m2!1sen!2sca!4v1754365890061!5m2!1sen!2sca"
                   width="100%"
                   height="450"
-                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Masjid Al-Ezz Location"
+                  title="Masjid Al-Ezz"
                 ></iframe>
               </div>
             </div>
