@@ -16,7 +16,7 @@ export function Donate() {
           </h2>
           <p className="max-w-xl mx-auto text-white/80">
             Your generous donations help maintain our masjid, support our
-            programs, and serve the community.
+            programs, and serve the community. All donations are tax deductible.
           </p>
         </div>
 
@@ -36,19 +36,11 @@ export function Donate() {
                   ></iframe>
                 </div>
               </div>
-
-              <div className="mt-4 text-center">
-                <p className="text-sm text-white/80">
-                  Peel Muslim Community Center is a registered charitable
-                  organization. All donations are tax-deductible.
-                </p>
-              </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* bottom fade-out gradient */}
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-primary to-transparent pointer-events-none" />
     </section>
   );

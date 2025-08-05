@@ -40,8 +40,6 @@ export default function Home() {
                   </span>
                   <br />
                   Your generous support turned a vision into reality.
-                  <br />
-                  Join us in building our community.
                 </p>
               </div>
             </div>
@@ -70,9 +68,8 @@ export default function Home() {
                 </h2>
                 <div className="w-24 h-1 bg-amber-400 lg:mx-0 mx-auto mb-6"></div>
                 <p className="text-gray-600 max-w-xl lg:pr-10">
-                  Enrich your spiritual journey and build meaningful
-                  connections. Our regular programs are designed to nurture
-                  faith, education, and community bonds for all ages.
+                  Enrich your spiritual journey and build meaningful connections
+                  with our weekly programs.
                 </p>
               </div>
             </div>

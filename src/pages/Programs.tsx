@@ -26,8 +26,7 @@ export default function ProgramsPage() {
             </h1>
             <p className="text-gray-600 max-w-2xl">
               Enrich your spiritual journey and build meaningful connections
-              with our regular programs. Unlike events, our programs require
-              registration and offer ongoing learning opportunities.
+              with our weekly programs.
             </p>
           </div>
 
