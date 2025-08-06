@@ -6,19 +6,20 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
+import { InstagramEvents } from "@/components/home/InstagramEvents";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main>
-        <section className="relative">
+        <section className="relative min-h-screen">
           {/* Background with overlay */}
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1584721284279-d48cf738a3c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')",
+                "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
@@ -57,16 +58,37 @@ export default function Home() {
         </section>
 
         <section
+          id="events"
+          className="pt-20 bg-gradient-to-b from-primary/5 to-white"
+        >
+          <div className="container mx-auto px-6">
+            <div className="mb-8">
+              <h2 className="text-4xl font-bold font-serif text-primary mb-4">
+                Our Events
+              </h2>
+              <div className="w-24 h-1 bg-amber-400 mb-6"></div>
+              <p className="text-gray-600 max-w-2xl">
+                Stay connected with our community through our latest events and
+                programs. <br />
+                Follow us on Instagram for more updates.
+              </p>
+            </div>
+
+            <InstagramEvents />
+          </div>
+        </section>
+
+        <section
           id="programs"
           className="py-20 bg-gradient-to-b from-white to-primary/5"
         >
           <div className="container mx-auto px-6">
-            <div className="flex flex-col lg:flex-row items-center justify-between mb-16">
-              <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+            <div className="flex flex-col lg:flex-row items-center justify-between mb-8">
+              <div className="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
                 <h2 className="text-4xl font-bold font-serif text-primary mb-4">
                   Weekly Programs
                 </h2>
-                <div className="w-24 h-1 bg-amber-400 lg:mx-0 mx-auto mb-6"></div>
+                <div className="w-24 h-1 bg-amber-400 lg:mx-0 mb-6"></div>
                 <p className="text-gray-600 max-w-xl lg:pr-10">
                   Enrich your spiritual journey and build meaningful connections
                   with our weekly programs.

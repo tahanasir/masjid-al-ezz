@@ -32,3 +32,12 @@
     animation: fadeIn 0.5s ease-in-out;
   }
 }
+
+/* hide scrollbar for all browsers */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
