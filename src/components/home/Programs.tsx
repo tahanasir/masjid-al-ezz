@@ -20,15 +20,15 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       cost: "$75/month",
       link: "http://bit.ly/youth-tajweed",
     },
-    {
-      title: "Deen & Discovery",
-      description:
-        "Join us for a scenic nature walk as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
-      schedule: "Saturday Bi-weekly",
-      time: "11:30 AM",
-      cost: "Free",
-      image: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
-    },
+    // {
+    //   title: "Deen & Discovery",
+    //   description:
+    //     "Join us for a scenic nature walk as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
+    //   schedule: "Saturday Bi-weekly",
+    //   time: "11:30 AM",
+    //   cost: "Free",
+    //   image: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+    // },
     {
       title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
