@@ -11,6 +11,26 @@ interface ProgramsProps {
 export function Programs({ limit, shuffle }: ProgramsProps) {
   let programs = [
     {
+      title: "Youth Qur'an Class (Ages 6-16)",
+      description:
+        "Join our Reading, Hifdh & Tajweed class for children ages 6-16. Taught by qualified male and female instructors.",
+      schedule: "Mondays to Thursdays",
+      time: "5:00 PM - 7:00 PM",
+      image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae",
+      cost: "$75/month",
+      link: "http://bit.ly/youth-tajweed",
+    },
+    {
+      title: "Deen & Discovery",
+      description:
+        "Join us for a scenic nature walk at Streetsville Memorial Park Trail as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
+      schedule: "Saturday Bi-weekly",
+      time: "11:30 AM",
+      cost: "Free",
+      image: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+      link: "https://bit.ly/deen-and-discovery",
+    },
+    {
       title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
         "A structured boxing program for youth that teaches discipline and self-defense in a safe environment. First two classes are complimentary.",
@@ -22,22 +42,11 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       link: "https://api.leadconnectorhq.com/widget/form/U0lkqUnMQLvXeKGojEm4",
     },
     {
-      title: "Qur'an Reading Program for Non-Arabic Speakers",
-      description:
-        "A Qur'an reading course for non-Arabic speakers. We will delve into accurate pronunciation and then explore common vocabulary and root meanings.",
-      schedule: "Every Saturday",
-      time: "4:00 PM - 5:00 PM",
-      image:
-        "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      cost: "$35/month",
-      link: "https://api.leadconnectorhq.com/widget/form/bBHuUUYfl4Kyx7U7vwXN",
-    },
-    {
       title: "Tafsir & Tea (Sisters)",
       description:
         "Join us weekly for a beautiful evening of sisterhood, reflection, and learning as we connect over the noble verses of the Qur'an with a warm drink in hand.",
-      schedule: "Every Sunday",
-      time: "4:30 PM - 5:30 PM",
+      schedule: "Every Wednesday",
+      time: "6:30 PM - 7:30 PM",
       image:
         "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "Free",
@@ -50,13 +59,13 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       time: "7:00 PM",
       image: "https://images.pexels.com/photos/144429/pexels-photo-144429.jpeg",
       cost: "Free",
-      link: "https://api.leadconnectorhq.com/widget/form/PNCPvL02YtA0S6UvBLZo",
+      link: "https://tinyurl.com/YouthSNL",
     },
     {
       title: "History of the 5 Caliphs",
       description:
         "Take a step back into Islamic history and reconnect with the roots of our faith. History of the 5 Caliphs is a weekly series exploring the early days of Islam.",
-      schedule: "Every Thursday starting May 15, 2025",
+      schedule: "Every Thursday",
       time: "7:00 PM - 8:00 PM",
       image:
         "https://images.pexels.com/photos/31779465/pexels-photo-31779465.jpeg",
@@ -67,7 +76,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Weekly family tafsir night featuring halaqas for youth and adults, children's activities. Tea and dinner will be provided.",
       schedule: "Every Friday",
-      time: "7:30 PM - Maghrib Iqama",
+      time: "7:30 PM - Maghrib",
       image:
         "https://images.pexels.com/photos/31607773/pexels-photo-31607773.jpeg",
       cost: "Free",
