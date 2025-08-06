@@ -23,12 +23,11 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
     {
       title: "Deen & Discovery",
       description:
-        "Join us for a scenic nature walk at Streetsville Memorial Park Trail as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
+        "Join us for a scenic nature walk as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
       schedule: "Saturday Bi-weekly",
       time: "11:30 AM",
       cost: "Free",
       image: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
-      link: "https://bit.ly/deen-and-discovery",
     },
     {
       title: "Beginner's Boxing Classes (Brothers 14+)",
