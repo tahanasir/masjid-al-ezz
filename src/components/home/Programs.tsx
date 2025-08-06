@@ -95,13 +95,33 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
     },
   ];
 
+  // Define pinned program titles
+  const pinnedTitles = [
+    "Youth Qur'an Class (Ages 6-16)",
+    "Tajweed & Hifdh Class (Sisters)",
+    "Family Tafsir Night"
+  ];
+  
+  // Pin specific programs at the top
+  const pinnedPrograms = programs.filter(program => 
+    pinnedTitles.includes(program.title)
+  );
+  
+  // Get the rest of the programs
+  const otherPrograms = programs.filter(program => 
+    !pinnedTitles.includes(program.title)
+  );
+  
+  // Shuffle the other programs if shuffle is enabled
+  if (shuffle === true) {
+    otherPrograms.sort(() => 0.5 - Math.random());
+  }
+  
+  // Combine pinned programs first, then the rest
+  programs = [...pinnedPrograms, ...otherPrograms];
+  
   // Paginate programs
   programs = typeof limit === "number" ? programs.slice(0, limit) : programs;
-
-  if (shuffle === true) {
-    // Random shuffle (biased)
-    programs.sort(() => 0.5 - Math.random());
-  }
 
   // Container animation variants
   const containerVariants = {
