@@ -12,7 +12,10 @@ import {
   Info,
   Phone,
   HeartHandshake,
+  MessageCircle,
+  Instagram,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import logo from "@/assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -66,18 +69,36 @@ export function Navbar() {
         className="bg-white sticky top-0 z-50 transition-all duration-300 py-1 md:py-2 shadow"
         ref={navRef}
       >
-        <nav className="flex items-center justify-between lg:justify-evenly flex-wrap px-2 md:px-4">
+        <nav className="flex items-center justify-between lg:justify-between flex-nowrap px-2 md:px-4 max-w-7xl mx-auto">
+          {/* Logo - Left */}
           <div className="flex items-center flex-shrink-0 mr-3 md:mr-6">
             <Link href="/" className="flex items-center gap-1 md:gap-2">
               <img
                 src={logo}
                 alt="Masjid Al-Ezz Logo"
-                className="transition-all py-1 h-12 md:h-10"
+                className="transition-all py-1 h-14 md:h-12"
               />
             </Link>
           </div>
 
-          <div className="block lg:hidden">
+          {/* Mobile Menu Button */}
+          <div className="block lg:hidden flex items-center gap-2">
+            <a
+              href="https://app.irm.io/masjidalezz.com"
+              target="_blank"
+              className="flex items-center justify-center px-3 py-2 bg-primary text-white rounded-lg shadow-lg font-bold text-sm hover:bg-primary/90 transition-colors"
+            >
+              <HeartHandshake className="mr-1.5 h-4 w-4" /> Donate
+            </a>
+            <a
+              href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition-colors"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+            </a>
             <Button
               variant="secondary"
               size="lg"
@@ -103,14 +124,14 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:w-auto">
-            <div className="lg:flex-grow flex items-center">
+          {/* Desktop Navigation - Center */}
+          <div className="hidden lg:flex lg:items-center lg:flex-1 lg:justify-center">
+            <div className="flex items-center">
               {navigationItems.map((item) => (
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`inline-flex items-center px-2 py-1.5 mx-1 rounded-md transition-colors text-sm ${
+                  className={`inline-flex items-center px-3 py-1.5 mx-2 rounded-md transition-colors text-base ${
                     location === item.path
                       ? "text-primary font-semibold bg-primary/5"
                       : "text-gray-700 hover:text-primary hover:bg-primary/5"
@@ -122,13 +143,23 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="hidden lg:block">
+          {/* Action Buttons - Right */}
+          <div className="hidden lg:flex items-center gap-2">
             <a
               href="https://app.irm.io/masjidalezz.com"
               target="_blank"
-              className="flex items-center justify-center w-full py-2 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
+              className="flex items-center justify-center py-2 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
             >
               <HeartHandshake className="mr-2 h-4 w-4" /> Donate
+            </a>
+            <a
+              href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition-colors"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
             </a>
           </div>
         </nav>
