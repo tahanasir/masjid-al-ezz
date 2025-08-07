@@ -182,7 +182,15 @@ export default function About() {
 
               <div className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
                 <div className="flex flex-col h-full md:flex-row">
-                  <div className="md:w-2/3 p-6 md:text-right">
+                  {/* Image first on mobile, last on desktop */}
+                  <div className="md:w-1/3 order-1 md:order-2">
+                    <img
+                      src={sheikhRasool}
+                      alt="Sheikh Abdulaziz Rasoul"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <div className="md:w-2/3 p-6 md:text-right order-2 md:order-1">
                     <h3 className="text-xl font-bold text-primary mb-4">
                       Sheikh Abdulaziz Rasoul
                     </h3>
@@ -198,13 +206,6 @@ export default function About() {
                       Brock University. He's also completing a Bachelor's in
                       Islamic Studies from Mishkah University.
                     </p>
-                  </div>
-                  <div className="md:w-1/3">
-                    <img
-                      src={sheikhRasool}
-                      alt="Sheikh Abdulaziz Rasoul"
-                      className="w-full h-full object-cover object-center"
-                    />
                   </div>
                 </div>
               </div>
