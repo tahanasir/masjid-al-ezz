@@ -44,8 +44,8 @@ export function Footer() {
             </a>
           </div>
           <p className="text-white/80 text-sm">
-            Copyright &copy; {new Date().getFullYear()} Masjid Al-Ezz. All rights
-            reserved.
+            Copyright &copy; {new Date().getFullYear()} Masjid Al-Ezz. All
+            rights reserved.
           </p>
         </div>
       </div>
