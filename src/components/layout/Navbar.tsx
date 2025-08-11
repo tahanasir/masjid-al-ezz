@@ -84,7 +84,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="block lg:hidden flex items-center gap-2">
             <a
-              href="https://app.irm.io/masjidalezz.com"
+              href="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
               target="_blank"
               className="flex items-center justify-center px-3 py-2 bg-primary text-white rounded-lg shadow-lg font-bold text-sm hover:bg-primary/90 transition-colors"
             >
@@ -146,7 +146,7 @@ export function Navbar() {
           {/* Action Buttons - Right */}
           <div className="hidden lg:flex items-center gap-2">
             <a
-              href="https://app.irm.io/masjidalezz.com"
+              href="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
               target="_blank"
               className="flex items-center justify-center py-2 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
             >
@@ -206,7 +206,7 @@ export function Navbar() {
                     className="mt-4"
                   >
                     <a
-                      href="https://app.irm.io/masjidalezz.com"
+                      href="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
                       target="_blank"
                       className="flex items-center justify-center w-full py-3 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
                     >
