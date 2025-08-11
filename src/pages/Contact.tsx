@@ -72,8 +72,8 @@ export default function Contact() {
                     </div>
                     <h3 className="font-bold text-gray-800 mb-2">Email</h3>
                     <p>
-                      <a href="mailto:info@masjidalezz.ca">
-                        info@masjidalezz.ca
+                      <a href="mailto:info@masjidalezz.com">
+                        info@masjidalezz.com
                       </a>
                     </p>
                   </div>
