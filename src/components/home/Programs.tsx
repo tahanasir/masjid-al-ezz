@@ -11,6 +11,16 @@ interface ProgramsProps {
 export function Programs({ limit, shuffle }: ProgramsProps) {
   let programs = [
     {
+      title: "Weekend Islamic School",
+      description:
+        "Starting Saturday, Sept 6th, children ages 6–14 can spend their weekends attending Qur'an classes, Islamic Studies sessions, and Arabic language classes, while also enjoying fun activities like sports and arts!",
+      schedule: "Every Saturday",
+      time: "10:00 AM - 2:00 PM",
+      image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      cost: "$75/month or $600/year",
+      link: "https://bit.ly/toledo-weekend-islamic-school",
+    },
+    {
       title: "Youth Qur'an Class (Ages 6-16)",
       description:
         "Join our Reading, Hifdh & Tajweed class for children ages 6-16. Taught by qualified male and female instructors.",
@@ -96,6 +106,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
 
   // Define pinned program titles
   const pinnedTitles = [
+    "Weekend Islamic School",
     "Youth Qur'an Class (Ages 6-16)",
     "Tajweed & Hifdh Class (Sisters)",
     "Family Tafsir Night",
