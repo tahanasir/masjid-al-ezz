@@ -66,7 +66,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className="bg-white sticky top-0 z-50 transition-all duration-300 py-1 md:py-2 shadow"
+        className="bg-white sticky top-0 z-50 transition-all duration-300 py-0.5 md:py-1 shadow"
         ref={navRef}
       >
         <nav className="flex items-center justify-between lg:justify-between flex-nowrap px-2 md:px-4 max-w-7xl mx-auto">
@@ -76,7 +76,7 @@ export function Navbar() {
               <img
                 src={logo}
                 alt="Masjid Al-Ezz Logo"
-                className="transition-all py-1 h-14 md:h-12"
+                className="transition-all h-14 md:h-12 py-0.5"
               />
             </Link>
           </div>
