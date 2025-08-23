@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { InstagramEvents } from "@/components/home/InstagramEvents";
+import { FeaturedEvent } from "@/components/home/FeaturedEvent";
 
 export default function Home() {
   return (
@@ -20,33 +21,43 @@ export default function Home() {
           }}
         >
           {/* Content */}
-          <div className="container mx-auto px-4 relative z-10 pt-6 pb-12">
-            {/* Hero Content - Centered */}
-            <div className="text-center py-4 lg:py-8">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-4 font-serif">
-                Welcome to
-                <br />
-                Masjid Al-Ezz!
-              </h1>
-              <div className="max-w-md mx-auto">
-                <p className="text-white text-base md:text-lg">
-                  <span className="font-bold text-amber-300">
-                    Masjid Al-Ezz has opened, Alhamdulillah
-                  </span>
-                  <br />
-                  Your generous support turned a vision into reality.
-                </p>
-              </div>
-            </div>
+          <div className="container mx-auto px-4 relative z-10 pt-12 pb-12">
+            <div className="flex flex-col lg:flex-row gap-8 items-start">
+              {/* Left Column - Welcome and Prayer Times */}
+              <div className="w-full lg:w-1/2 space-y-8">
+                {/* Welcome Section */}
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                  <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+                    Welcome to Masjid Al-Ezz!
+                  </h1>
+                  <div className="text-white/90 space-y-4">
+                    <p className="text-lg">
+                      <span className="font-bold text-amber-300">
+                        Masjid Al-Ezz has opened, Alhamdulillah
+                      </span>
+                      <br />
+                      Your generous support turned a vision into reality.
+                    </p>
+                  </div>
+                </div>
 
-            {/* Prayer Times - Full Width */}
-            <div className="max-w-4xl mx-auto rounded-sm md:rounded-xl overflow-hidden">
-              <div className="bg-primary py-2 px-3 text-center">
-                <h2 className="text-base md:text-lg font-serif text-white font-semibold">
-                  Today's Prayer Times
-                </h2>
+                {/* Prayer Times */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20">
+                  <div className="bg-primary/90 py-3 px-4">
+                    <h2 className="text-lg font-serif text-white font-semibold">
+                      Today's Prayer Times
+                    </h2>
+                  </div>
+                  <div className="p-4">
+                    <MasjidBoxWidget />
+                  </div>
+                </div>
               </div>
-              <MasjidBoxWidget />
+
+              {/* Right Column - Featured Event */}
+              <div className="w-full lg:w-1/2">
+                <FeaturedEvent />
+              </div>
             </div>
           </div>
         </section>
