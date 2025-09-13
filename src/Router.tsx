@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, Navigate } from "react-router-dom";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import EventCalendar from "@/pages/EventCalendar";
@@ -20,6 +20,13 @@ const AppRoutes: React.FC = () => {
       navigate(redirect, { replace: true });
     }
   }, [navigate]);
+
+  // Handle hash-based routing for /#donate
+  useEffect(() => {
+    if (window.location.hash === '#donate') {
+      window.location.href = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan';
+    }
+  }, [location.hash]);
 
   return (
     <Routes>
