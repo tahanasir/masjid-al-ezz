@@ -1,7 +1,7 @@
 import { GraduationCap, Home, ShieldPlus, Sun, Users } from "lucide-react";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 // Import the masjid logo
 import logo from "@assets/logo.png";

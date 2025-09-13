@@ -4,7 +4,7 @@ import { Programs } from "@/components/home/Programs";
 import { Donate } from "@/components/home/Donate";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { InstagramEvents } from "@/components/home/InstagramEvents";
 

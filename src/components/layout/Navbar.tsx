@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Menu,
@@ -30,7 +30,7 @@ const navigationItems = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const location = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
 
   // Close mobile menu when navigating
@@ -72,7 +72,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between lg:justify-between flex-nowrap px-2 md:px-4 max-w-7xl mx-auto">
           {/* Logo - Left */}
           <div className="flex items-center flex-shrink-0 mr-3 md:mr-6">
-            <Link href="/" className="flex items-center gap-1 md:gap-2">
+            <Link to="/" className="flex items-center gap-1 md:gap-2">
               <img
                 src={logo}
                 alt="Masjid Al-Ezz Logo"
@@ -83,13 +83,12 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="block lg:hidden flex items-center gap-2">
-            <a
-              href="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
-              target="_blank"
+            <Link
+              to="/donate"
               className="flex items-center justify-center px-3 py-2 bg-primary text-white rounded-lg shadow-lg font-bold text-sm hover:bg-primary/90 transition-colors"
             >
               <HeartHandshake className="mr-1.5 h-4 w-4" /> Donate
-            </a>
+            </Link>
             <a
               href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
               target="_blank"
@@ -127,31 +126,33 @@ export function Navbar() {
           {/* Desktop Navigation - Center */}
           <div className="hidden lg:flex lg:items-center lg:flex-1 lg:justify-center">
             <div className="flex items-center">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`inline-flex items-center px-3 py-1.5 mx-2 rounded-md transition-colors text-base ${
-                    location === item.path
-                      ? "text-primary font-semibold bg-primary/5"
-                      : "text-gray-700 hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navigationItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`inline-flex items-center px-3 py-1.5 mx-2 rounded-md transition-colors text-base ${
+                      isActive
+                        ? "text-primary font-semibold bg-primary/5"
+                        : "text-gray-700 hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
           {/* Action Buttons - Right */}
           <div className="hidden lg:flex items-center gap-2">
-            <a
-              href="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
-              target="_blank"
+            <Link
+              to="/donate"
               className="flex items-center justify-center py-2 px-3 bg-primary text-white rounded-lg shadow-md font-semibold text-base"
             >
               <HeartHandshake className="mr-2 h-4 w-4" /> Donate
-            </a>
+            </Link>
             <a
               href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
               target="_blank"
@@ -185,9 +186,9 @@ export function Navbar() {
                       transition={{ delay: index * 0.05 }}
                     >
                       <Link
-                        href={item.path}
+                        to={item.path}
                         className={`flex items-center px-3 py-2.5 mb-1.5 rounded-lg transition-colors ${
-                          location === item.path
+                          location.pathname === item.path
                             ? "bg-primary/10 text-primary font-semibold"
                             : "hover:bg-primary/5 text-gray-800"
                         }`}
