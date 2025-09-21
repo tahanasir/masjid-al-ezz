@@ -17,7 +17,7 @@ interface InstagramFeedData {
 }
 
 const BEHOLD_FEED_URL =
-  "https://6c2759bf-behold-proxy.ibrahimsidq-e34.workers.dev/";
+  "https://feeds.behold.so/APoFU4ckvk1dj1J1gto8";
 
 export function InstagramEvents() {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
