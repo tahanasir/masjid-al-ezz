@@ -63,25 +63,18 @@ const Gallery = () => {
   }, [isAutoPlay, images.length]);
 
   return (
-    <div className="bg-primary py-12 sm:py-16 w-full"
+    <div className="bg-primary py-6 sm:py-8 w-full"
       style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
       }}
     >
       <div className="w-full px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 font-serif">
-          Masjid Al-Ezz Gallery
-        </h2>
+        <div className="relative w-full max-w-6xl mx-auto">
         
-        <div className="max-w-6xl mx-auto">
-          <div 
-            className="relative w-full rounded-xl overflow-hidden shadow-2xl"
-            onMouseEnter={() => setIsAutoPlay(false)}
-            onMouseLeave={() => setIsAutoPlay(true)}
-          >
+          <div className="max-w-6xl mx-auto">
             {/* Main Image */}
             <div 
-              className="aspect-w-16 aspect-h-9 flex items-center justify-center p-4 bg-black/10 relative group"
+              className="aspect-w-16 aspect-h-9 flex items-center justify-center bg-black/10 relative group"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
@@ -89,7 +82,7 @@ const Gallery = () => {
                 <img
                   src={images[currentIndex]}
                   alt={`Gallery ${currentIndex + 1}`}
-                  className="max-h-full max-w-full object-contain transition-opacity duration-500"
+                  className="w-full h-full object-contain transition-opacity duration-500"
                   onLoad={() => setIsLoading(false)}
                   style={{ opacity: isLoading ? 0 : 1 }}
                 />
@@ -103,27 +96,27 @@ const Gallery = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full focus:outline-none transition-all duration-200"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
             aria-label="Previous image"
           >
             <ChevronLeftIcon className="h-6 w-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full focus:outline-none transition-all duration-200"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
             aria-label="Next image"
           >
-            <ChevronRightIcon className="h-6 w-6" />
+            <ChevronRightIcon className="h-5 w-5" />
           </button>
           
           {/* Dots Indicator */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 w-2 rounded-full transition-all duration-200 ${
-                  index === currentIndex ? 'bg-white w-6' : 'bg-white/50'
+                  index === currentIndex ? 'bg-white w-4' : 'bg-white/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

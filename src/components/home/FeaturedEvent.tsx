@@ -43,18 +43,37 @@ export function FeaturedEvent() {
         const data = await response.json();
         console.log('Fetched Instagram data:', data);
         
-        // Get the most recent post
+        // Get the most recent picture post (filter out videos and reels)
         if (data.posts && data.posts.length > 0) {
-          const latestPost = data.posts[0];
-          console.log('Latest post:', latestPost);
-          setFeaturedEvent({
-            id: latestPost.id,
-            caption: latestPost.caption,
-            permalink: latestPost.permalink,
-            mediaUrl: latestPost.mediaUrl,
-            timestamp: latestPost.timestamp,
-            sizes: latestPost.sizes
-          });
+          const picturePost = data.posts.find((post: any) => 
+            post.mediaType === 'IMAGE' && 
+            !post.mediaUrl.includes('video') && 
+            !post.permalink.includes('/reel/')
+          );
+          
+          if (picturePost) {
+            console.log('Latest picture post:', picturePost);
+            setFeaturedEvent({
+              id: picturePost.id,
+              caption: picturePost.caption,
+              permalink: picturePost.permalink,
+              mediaUrl: picturePost.mediaUrl,
+              timestamp: picturePost.timestamp,
+              sizes: picturePost.sizes
+            });
+          } else if (data.posts[0]) {
+            // Fallback to first post if no picture post found (shouldn't happen if feed is configured correctly)
+            console.log('No picture posts found, falling back to first post');
+            const firstPost = data.posts[0];
+            setFeaturedEvent({
+              id: firstPost.id,
+              caption: firstPost.caption,
+              permalink: firstPost.permalink,
+              mediaUrl: firstPost.mediaUrl,
+              timestamp: firstPost.timestamp,
+              sizes: firstPost.sizes
+            });
+          }
         }
       } catch (err) {
         setError("Failed to load featured event. Please try again later.");

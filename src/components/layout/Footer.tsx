@@ -1,8 +1,12 @@
 import { Instagram, Youtube, Facebook, Link } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export function Footer({ className = '' }: FooterProps) {
   return (
-    <footer className="bg-primary text-white">
+    <footer className={`bg-primary text-white ${className}`}>
       <div className="px-6 pb-6 mx-auto border-t border-white/20 pt-6 text-center">
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-4">

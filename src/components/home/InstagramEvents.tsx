@@ -1,23 +1,21 @@
 import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
-import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 
 interface InstagramPost {
   id: string;
   permalink: string;
-  sizes: {
-    full: {
-      mediaUrl: string;
-    };
-  };
+  mediaUrl: string;
+  mediaType: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM';
+  caption?: string;
+  thumbnailUrl?: string;
 }
 
 interface InstagramFeedData {
   posts: InstagramPost[];
 }
 
-const BEHOLD_FEED_URL =
-  "https://feeds.behold.so/APoFU4ckvk1dj1J1gto8";
+const BEHOLD_FEED_URL = "https://feeds.behold.so/APoFU4ckvk1dj1J1gto8";
 
 export function InstagramEvents() {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
@@ -26,6 +24,7 @@ export function InstagramEvents() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const checkScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -83,47 +82,75 @@ export function InstagramEvents() {
   }, [posts]);
 
   useEffect(() => {
-    const fetchInstagramPosts = async () => {
+    const fetchPosts = async () => {
       try {
         const response = await fetch(BEHOLD_FEED_URL);
-        if (!response.ok) throw new Error("Failed to fetch Instagram posts.");
         const data: InstagramFeedData = await response.json();
-
-        // Random shuffle (biased)
-        data.posts.sort(() => 0.5 - Math.random());
-
-        setPosts(data.posts);
+        // Filter for image posts only
+        const imagePosts = data.posts.filter(post => post.mediaType === 'IMAGE');
+        setPosts(imagePosts);
+        setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred");
+        console.error("Error fetching Instagram posts:", err);
+        setError("Failed to load Instagram posts. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
-    fetchInstagramPosts();
+
+    fetchPosts();
   }, []);
 
-  if (loading || error) {
+  if (loading) {
     return (
-      <div className="relative">
-        <div
-          ref={scrollContainerRef}
-          className="flex space-x-6 overflow-x-scroll no-scrollbar py-4"
-        >
-          {Array.from({ length: 6 }).map((_, idx) => (
-            <Card
-              key={idx}
-              className="flex-none h-[600px] aspect-[4/5] overflow-hidden animate-pulse"
-            >
-              <div className="bg-gray-200 aspect-square"></div>
-              <div className="p-4">
-                <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                <div className="h-3 bg-gray-200 rounded mb-1"></div>
-                <div className="h-3 bg-gray-200 rounded w-3/4"></div>
-              </div>
-            </Card>
-          ))}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 font-serif text-primary">
+            Instagram Gallery
+          </h2>
+          <div className="flex justify-center items-center py-12">
+            <div className="animate-pulse text-gray-500 flex items-center">
+              <ImageIcon className="h-5 w-5 mr-2" />
+              Loading Instagram gallery...
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+    );
+  }
+
+  if (error || posts.length === 0) {
+    return (
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 font-serif text-primary">
+            Instagram Gallery
+          </h2>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4 rounded">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg
+                  className="h-5 w-5 text-yellow-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-yellow-700">
+                  {error || 'No Instagram posts available at the moment.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 
@@ -167,9 +194,10 @@ export function InstagramEvents() {
           >
             <div className="relative w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[480px] aspect-[4/5] overflow-hidden">
               <img
-                src={post.sizes.full.mediaUrl}
-                alt="Instagram post"
-                className="w-full h-full object-cover"
+                src={post.mediaUrl}
+                alt={post.caption || 'Instagram post'}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute top-3 right-3 bg-white/90 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ExternalLink className="h-4 w-4 text-primary" />
