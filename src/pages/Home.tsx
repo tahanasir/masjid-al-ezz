@@ -25,8 +25,8 @@ export default function Home() {
               {/* Left Column - Welcome and Prayer Times */}
               <div className="w-full lg:w-5/12 space-y-8">
                 {/* Welcome Section */}
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
-                  <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 font-serif text-center lg:text-left">
+                <div className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-white/20">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 font-serif text-center lg:text-left">
                     Welcome to Masjid Al-Ezz!
                   </h1>
                   <div className="text-white/90 space-y-6 text-lg text-center lg:text-left">
@@ -49,7 +49,7 @@ export default function Home() {
               </div>
 
               {/* Right Column - Featured Event */}
-              <div className="w-full lg:w-5/12">
+              <div className="w-full lg:w-5/12 mt-8 lg:mt-0">
                 <FeaturedEvent />
               </div>
             </div>
