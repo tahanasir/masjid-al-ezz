@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { MasjidBoxWidget } from "@/components/home/MasjidBoxWidget";
 import { InstagramEvents } from "@/components/home/InstagramEvents";
 import { FeaturedEvent } from "@/components/home/FeaturedEvent";
+import Gallery from "@/components/home/Gallery";
 
 export default function Home() {
   return (
@@ -74,9 +75,12 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Gallery Section */}
+        <Gallery />
+        
         {/* Programs Section */}
-        <section id="programs" className="w-full bg-gradient-to-b from-white to-primary/5">
-          <div className="container mx-auto px-6 py-20">
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center justify-between mb-8">
               <div className="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
                 <h2 className="text-4xl font-bold font-serif text-primary mb-4">
