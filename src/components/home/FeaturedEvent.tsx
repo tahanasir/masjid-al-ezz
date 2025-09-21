@@ -23,7 +23,7 @@ interface InstagramPost {
 }
 
 const BEHOLD_FEED_URL =
-  "https://6c2759bf-behold-proxy.ibrahimsidq-e34.workers.dev/";
+  "https://feeds.behold.so/APoFU4ckvk1dj1J1gto8";
 
 export function FeaturedEvent() {
   const [featuredEvent, setFeaturedEvent] = useState<InstagramPost | null>(null);
@@ -91,7 +91,20 @@ export function FeaturedEvent() {
       if (lowerLine.includes('📅') || lowerLine.includes('date:')) {
         details.date = line.replace(/[📅:]/g, '').trim();
       } else if (lowerLine.includes('🕕') || lowerLine.includes('time:')) {
-        details.time = line.replace(/[🕕:]/g, '').trim();
+        // Extract and clean the time string, keeping the original format
+        let timeStr = line
+          .replace(/[🕕]/g, '')  // Remove clock emoji
+          .replace(/^time:/i, '') // Remove 'time:' prefix if present
+          .trim();
+        
+        // If the time contains 'PM' or 'AM', ensure proper spacing
+        timeStr = timeStr.replace(/(\d)([AP]M)/i, '$1 $2');
+        
+        // Clean up any double spaces
+        timeStr = timeStr.replace(/\s+/g, ' ').trim();
+        
+        // Set the time as is, since it's already in the correct format from Instagram
+        details.time = timeStr;
       } else if (lowerLine.includes('📍') || lowerLine.includes('location:')) {
         details.location = line.replace(/[📍:]/g, '').trim();
       } else if (line.trim() && !details.description.includes(line) && line !== details.title) {
@@ -131,7 +144,6 @@ export function FeaturedEvent() {
     );
   }
 
-  // Use a placeholder image for now
   const placeholderImage = 'https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80';
   const eventDetails = featuredEvent ? extractEventDetails(featuredEvent.caption) : {
     title: 'Upcoming Event',
@@ -140,7 +152,14 @@ export function FeaturedEvent() {
     time: '',
     location: 'Masjid Al-Ezz'
   };
-  const eventImage = placeholderImage;
+  
+  // Use the medium-sized image from Instagram if available, otherwise use the placeholder
+  const eventImage = featuredEvent?.sizes?.medium?.mediaUrl || 
+                    featuredEvent?.sizes?.large?.mediaUrl || 
+                    featuredEvent?.sizes?.small?.mediaUrl || 
+                    featuredEvent?.sizes?.full?.mediaUrl || 
+                    featuredEvent?.mediaUrl || 
+                    placeholderImage;
 
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 h-full flex flex-col">
@@ -150,21 +169,21 @@ export function FeaturedEvent() {
         </h2>
       </div>
       <div className="flex-grow flex flex-col">
-        <div className="relative overflow-hidden" style={{ height: '500px' }}>
+        <div className="relative overflow-hidden mx-auto" style={{ height: '425px', maxWidth: '80%', width: '100%' }}>
           <img 
             src={eventImage}
             alt={eventDetails.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-            <h3 className="text-2xl font-bold mb-2">{eventDetails.title}</h3>
-            <p className="text-white/90 line-clamp-2 text-sm">{eventDetails.description}</p>
-          </div>
         </div>
-        <div className="p-6">
+        <div className="p-6 flex-grow flex flex-col">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-white mb-4">{eventDetails.title}</h3>
+            <p className="text-white/90 text-sm whitespace-pre-line">{eventDetails.description}</p>
+          </div>
           {(eventDetails.date || eventDetails.time || eventDetails.location) && (
-          <div className="space-y-2 mb-4">
+          <div className="mt-auto space-y-2">
             {eventDetails.date && (
               <div className="flex items-center text-amber-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
