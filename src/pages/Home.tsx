@@ -57,53 +57,51 @@ export default function Home() {
         </section>
 
         {/* Events Section */}
-        <section id="events" className="w-full py-20 bg-gradient-to-b from-primary/5 to-white">
-          <div className="container mx-auto px-6 max-w-6xl">
-            <div className="text-center mb-12">
+        <section id="events" className="w-full bg-gradient-to-b from-primary/5 to-white">
+          <div className="container mx-auto px-6 py-20">
+            <div className="mb-8">
               <h2 className="text-4xl font-bold font-serif text-primary mb-4">
                 Our Events
               </h2>
-              <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                Stay connected with our community through our latest events and programs.
-                <br />
+              <div className="w-24 h-1 bg-amber-400 mb-6"></div>
+              <p className="text-gray-600 max-w-2xl">
+                Stay connected with our community through our latest events and
+                programs. <br />
                 Follow us on Instagram for more updates.
               </p>
             </div>
-
-            <div className="flex justify-center">
-              <InstagramEvents />
-            </div>
+            <InstagramEvents />
           </div>
         </section>
 
         {/* Programs Section */}
-        <section id="programs" className="w-full py-20 bg-gradient-to-b from-white to-primary/5">
-          <div className="container mx-auto px-6 max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold font-serif text-primary mb-4">
-                Weekly Programs
-              </h2>
-              <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-8">
-                Enrich your spiritual journey and build meaningful connections
-                with our weekly programs.
-              </p>
+        <section id="programs" className="w-full bg-gradient-to-b from-white to-primary/5">
+          <div className="container mx-auto px-6 py-20">
+            <div className="flex flex-col lg:flex-row items-center justify-between mb-8">
+              <div className="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
+                <h2 className="text-4xl font-bold font-serif text-primary mb-4">
+                  Weekly Programs
+                </h2>
+                <div className="w-24 h-1 bg-amber-400 lg:mx-0 mb-6"></div>
+                <p className="text-gray-600 max-w-xl lg:pr-10">
+                  Enrich your spiritual journey and build meaningful connections
+                  with our weekly programs.
+                </p>
+              </div>
             </div>
 
-            <div className="flex justify-center">
-              <Programs limit={6} shuffle />
-            </div>
+            <Programs limit={6} shuffle />
 
             <div className="mt-16 text-center">
               <Link to="/programs">
-                <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-3 h-14 text-lg shadow-lg transform transition-transform hover:scale-105">
-                  View All Programs <ArrowRight className="ml-2 h-5 w-5" />
+                <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-2 h-12 text-base shadow-lg">
+                  View All Programs <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
           </div>
         </section>
+        
         <Donate />
       </main>
       <Footer />
