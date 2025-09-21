@@ -26,12 +26,12 @@ export default function Home() {
               <div className="w-full lg:w-5/12 space-y-8">
                 {/* Welcome Section */}
                 <div className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-white/20">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 font-serif text-center lg:text-left">
+                  <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 font-serif text-center lg:text-left">
                     Welcome to Masjid Al-Ezz!
                   </h1>
-                  <div className="text-white/90 space-y-4 sm:space-y-6 text-base sm:text-lg text-center lg:text-left">
+                  <div className="text-white/90 space-y-2 space-y-3 text-xs sm:text-sm text-center lg:text-left">
                     <p>
-                      <span className="font-bold text-amber-300 text-lg sm:text-xl">
+                      <span className="font-bold text-amber-300 text-sm sm:text-base">
                         Masjid Al-Ezz has opened, Alhamdulillah
                       </span>
                       <br />
