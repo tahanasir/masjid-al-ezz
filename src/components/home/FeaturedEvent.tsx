@@ -67,6 +67,54 @@ export function FeaturedEvent() {
     fetchFeaturedEvent();
   }, []);
 
+  // Function to convert URLs in text to clickable links
+  const linkifyText = (text: string) => {
+    if (!text) return '';
+    
+    // Regular expression to match URLs
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    
+    // Split the text into parts, keeping the URLs
+    const parts = text.split(urlRegex);
+    
+    // If no URLs found, return the original text
+    if (parts.length === 1) return text;
+    
+    // Process each part to detect URLs and convert them to links
+    return parts.map((part, index) => {
+      if (part.match(urlRegex)) {
+        // Clean up the URL and ensure it has a protocol
+        let url = part.trim();
+        if (!url.startsWith('http')) {
+          url = 'https://' + url;
+        }
+        
+        // Extract domain for display
+        let displayUrl = url
+          .replace(/^https?:\/\//, '') // Remove protocol
+          .replace(/\/$/, ''); // Remove trailing slash
+          
+        // Shorten display URL if too long
+        if (displayUrl.length > 30) {
+          displayUrl = displayUrl.substring(0, 30) + '...';
+        }
+        
+        return (
+          <a 
+            key={index}
+            href={url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-amber-300 hover:underline break-all"
+          >
+            {displayUrl}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+
   const extractEventDetails = (caption: string) => {
     // Default values
     const details = {
@@ -109,13 +157,15 @@ export function FeaturedEvent() {
         details.location = line.replace(/[📍:]/g, '').trim();
       } else if (line.trim() && !details.description.includes(line) && line !== details.title) {
         // Add as description if not already included and not empty
-        details.description += (details.description ? ' ' : '') + line.trim();
+        const lineContent = line.trim();
+        details.description += (details.description ? ' ' : '') + lineContent;
       }
     });
 
     // If no description was found, use the first few lines of the caption
     if (!details.description && lines.length > 1) {
-      details.description = lines.slice(1, 3).join(' ').substring(0, 150) + '...';
+      const defaultDesc = lines.slice(1, 3).join(' ').substring(0, 150) + '...';
+      details.description = defaultDesc;
     }
 
     return details;
@@ -180,7 +230,11 @@ export function FeaturedEvent() {
         <div className="p-6 flex-grow flex flex-col">
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-4">{eventDetails.title}</h3>
-            <p className="text-white/90 text-sm whitespace-pre-line">{eventDetails.description}</p>
+            <p className="text-white/90 text-sm whitespace-pre-line">
+              {typeof eventDetails.description === 'string' 
+                ? linkifyText(eventDetails.description) 
+                : eventDetails.description}
+            </p>
           </div>
           {(eventDetails.date || eventDetails.time || eventDetails.location) && (
           <div className="mt-auto space-y-2">

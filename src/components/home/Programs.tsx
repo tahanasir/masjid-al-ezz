@@ -43,8 +43,8 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
         "A structured boxing program for youth that teaches discipline and self-defense in a safe environment. First two classes are complimentary.",
-      schedule: "Every Friday",
-      time: "5:45 PM - 7:15 PM",
+      schedule: "Every Thursday",
+      time: "8:00 PM - 10:00 PM",
       image:
         "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "$50/month",
@@ -61,12 +61,12 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       cost: "Free",
     },
     {
-      title: "Saturday Night Live with Sh. Rasoul",
+      title: "Brothers Ilm & Chill",
       description:
-        "Enjoy inspiring stories from the lives of the prophets and the righteous followed by a real-talk Q&A. Refreshments will be provided.",
+        "Masjid Al-Ezz invites all high school & university students to come out for our weekly ILM & CHILL session!\n\n📖 This week's topic: 'A Muslim's Vision' – a short and powerful khatira after Maghrib to get us thinking about our direction and goals as Muslims.\n\n🎉 After the talk, stick around for some fun activities, chill vibes, brotherhood and some delicious pizza 🍕",
       schedule: "Every Saturday",
-      time: "7:00 PM",
-      image: "https://images.pexels.com/photos/144429/pexels-photo-144429.jpeg",
+      time: "After Maghrib",
+      image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=800",
       cost: "Free",
       link: "https://tinyurl.com/YouthSNL",
     },
