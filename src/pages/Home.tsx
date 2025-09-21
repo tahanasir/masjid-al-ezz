@@ -25,9 +25,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-center justify-center">
               {/* Left Column - Welcome and Prayer Times */}
-              <div className="w-full lg:w-5/12 space-y-8">
+              <div className="w-full lg:w-5/12 space-y-4">
                 {/* Welcome Section */}
-                <div className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-white/20">
+                <div className="p-6 sm:p-8">
                   <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 font-serif text-center lg:text-left">
                     Welcome to Masjid Al-Ezz!
                   </h1>
@@ -43,7 +43,7 @@ export default function Home() {
                 </div>
 
                 {/* Prayer Times */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden">
                   <div className="p-4">
                     <MasjidBoxWidget />
                   </div>
