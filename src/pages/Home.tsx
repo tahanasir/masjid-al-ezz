@@ -29,9 +29,9 @@ export default function Home() {
                   <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 font-serif text-center lg:text-left">
                     Welcome to Masjid Al-Ezz!
                   </h1>
-                  <div className="text-white/90 space-y-6 text-lg text-center lg:text-left">
+                  <div className="text-white/90 space-y-4 sm:space-y-6 text-base sm:text-lg text-center lg:text-left">
                     <p>
-                      <span className="font-bold text-amber-300 text-xl">
+                      <span className="font-bold text-amber-300 text-lg sm:text-xl">
                         Masjid Al-Ezz has opened, Alhamdulillah
                       </span>
                       <br />
