@@ -181,18 +181,18 @@ export function InstagramEvents() {
       {/* Posts container */}
       <div
         ref={scrollContainerRef}
-        className="flex space-x-6 overflow-x-scroll no-scrollbar py-4"
+        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory w-full py-4 h-[600px] md:h-auto px-4 no-scrollbar"
       >
         {posts.map((post) => (
           <div
             key={post.id}
             data-post
-            className="flex-none overflow-hidden group hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            className="flex-none w-[calc(100vw-2rem)] md:w-80 lg:w-96 xl:w-[480px] snap-center group hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full"
             onClick={() =>
               window.open(post.permalink, "_blank", "noopener,noreferrer")
             }
           >
-            <div className="relative w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[480px] aspect-[4/5] overflow-hidden">
+            <div className="relative w-full h-full aspect-[3/4] md:aspect-[4/5] overflow-hidden">
               <img
                 src={post.mediaUrl}
                 alt={post.caption || 'Instagram post'}

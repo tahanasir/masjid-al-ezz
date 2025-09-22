@@ -78,8 +78,8 @@ export default function Home() {
         </div>
 
         {/* Events Section */}
-        <section id="events" className="w-full bg-gradient-to-b from-primary/5 to-white min-h-[100vh] flex items-center">
-          <div className="container mx-auto px-4 py-12">
+        <section id="events" className="w-full bg-gradient-to-b from-primary/5 to-white min-h-[120vh] md:min-h-[100vh] flex items-center">
+          <div className="container mx-auto px-4 py-16 md:py-12">
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary mb-3">
                 Our Events
