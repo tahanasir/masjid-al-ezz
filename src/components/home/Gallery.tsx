@@ -63,7 +63,7 @@ const Gallery = () => {
   }, [isAutoPlay, images.length]);
 
   return (
-    <div className="bg-primary py-6 sm:py-8 w-full"
+    <div className="bg-primary py-8 sm:py-12 w-full min-h-[80vh] flex items-center"
       style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
       }}
@@ -71,10 +71,10 @@ const Gallery = () => {
       <div className="w-full px-4 sm:px-6">
         <div className="relative w-full max-w-6xl mx-auto">
         
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto h-full">
             {/* Main Image */}
             <div 
-              className="aspect-w-16 aspect-h-9 flex items-center justify-center bg-black/10 relative group"
+              className="aspect-[9/16] md:aspect-video flex items-center justify-center bg-black/10 relative group h-[70vh] md:h-auto"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
@@ -82,7 +82,7 @@ const Gallery = () => {
                 <img
                   src={images[currentIndex]}
                   alt={`Gallery ${currentIndex + 1}`}
-                  className="w-full h-full object-contain transition-opacity duration-500"
+                  className="w-full h-full object-cover transition-opacity duration-500"
                   onLoad={() => setIsLoading(false)}
                   style={{ opacity: isLoading ? 0 : 1 }}
                 />
