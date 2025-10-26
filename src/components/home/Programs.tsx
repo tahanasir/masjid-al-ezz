@@ -51,11 +51,11 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       link: "https://api.leadconnectorhq.com/widget/form/U0lkqUnMQLvXeKGojEm4",
     },
     {
-      title: "Tafsir & Tea (Sisters)",
+      title: "Pearls of the Quran – A Sisters' Tafsir Circle",
       description:
         "Join us weekly for a beautiful evening of sisterhood, reflection, and learning as we connect over the noble verses of the Qur'an with a warm drink in hand.",
       schedule: "Every Wednesday",
-      time: "6:30 PM - 7:30 PM",
+      time: "7:00 PM - 8:00 PM",
       image:
         "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "Free",
@@ -65,7 +65,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Masjid Al-Ezz invites all high school & university students to come out for our weekly ILM & CHILL session!\n\n📖 This week's topic: 'A Muslim's Vision' – a short and powerful khatira after Maghrib to get us thinking about our direction and goals as Muslims.\n\n🎉 After the talk, stick around for some fun activities, chill vibes, brotherhood and some delicious pizza 🍕",
       schedule: "Every Saturday",
-      time: "After Maghrib",
+      time: "7:00 PM",
       image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=800",
       cost: "Free",
       link: "https://tinyurl.com/YouthSNL",
@@ -75,7 +75,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Take a step back into Islamic history and reconnect with the roots of our faith. History of the 5 Caliphs is a weekly series exploring the early days of Islam.",
       schedule: "Every Thursday",
-      time: "7:00 PM - 8:00 PM",
+      time: "8:00 PM",
       image:
         "https://images.pexels.com/photos/31779465/pexels-photo-31779465.jpeg",
       cost: "Free",
@@ -85,7 +85,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Weekly family tafsir night featuring halaqas for youth and adults, children's activities. Tea and dinner will be provided.",
       schedule: "Every Friday",
-      time: "7:30 PM - Maghrib",
+      time: "7:00 PM",
       image:
         "https://images.pexels.com/photos/31607773/pexels-photo-31607773.jpeg",
       cost: "Free",
