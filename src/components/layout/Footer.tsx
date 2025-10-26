@@ -48,6 +48,9 @@ export function Footer({ className = '' }: FooterProps) {
             </a>
           </div>
           <p className="text-white/80 text-sm">
+            A service of Peel Muslim Community Centre (PMCC)
+          </p>
+          <p className="text-white/80 text-sm">
             Copyright &copy; {new Date().getFullYear()} Masjid Al-Ezz. All
             rights reserved.
           </p>
