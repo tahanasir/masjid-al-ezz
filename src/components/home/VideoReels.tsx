@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, ReactNode } from 'react';
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 
 interface VideoReel {
@@ -8,9 +8,13 @@ interface VideoReel {
   thumbnailUrl: string;
 }
 
+interface VideoReelsProps {
+  children?: (props: { hasVideos: boolean }) => ReactNode;
+}
+
 const BEHOLD_VIDEOS_URL = "https://feeds.behold.so/APoFU4ckvk1dj1J1gto8";
 
-export function VideoReels() {
+export function VideoReels({ children }: VideoReelsProps = {}) {
   const [reels, setReels] = useState<VideoReel[]>([]);
   const [currentReelIndex, setCurrentReelIndex] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
@@ -93,7 +97,13 @@ export function VideoReels() {
     });
   };
 
-  if (!reels.length) return null;
+  // If children is provided, let the parent component handle rendering
+  if (children) {
+    return <>{children({ hasVideos: reels.length > 0 })}</>;
+  }
+  
+  // If no children and no videos, return null
+  if (reels.length === 0) return null;
 
   return (
     <div className="w-full">

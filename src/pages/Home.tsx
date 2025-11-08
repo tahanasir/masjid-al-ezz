@@ -58,24 +58,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Video Reels Section */}
-        <div className="w-full bg-gradient-to-b from-white to-primary/5 min-h-[100vh] flex items-center">
-          <div className="container mx-auto px-4 py-12">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
-                <Video className="w-8 h-8" />
+        {/* Video Reels Section - Only show if there are videos */}
+        <VideoReels>
+          {({ hasVideos }) => (
+            hasVideos && (
+              <div className="w-full bg-gradient-to-b from-white to-primary/5 min-h-[100vh] flex items-center">
+                <div className="container mx-auto px-4 py-12">
+                  <div className="text-center mb-12">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+                      <Video className="w-8 h-8" />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-serif">
+                      Explore Our Video Content
+                    </h2>
+                    <div className="w-24 h-1 bg-amber-400 mx-auto mb-4"></div>
+                    <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+                      Stay updated with the latest videos from Masjid Al-Ezz
+                    </p>
+                  </div>
+                  <VideoReels />
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-serif">
-                Explore Our Video Content
-              </h2>
-              <div className="w-24 h-1 bg-amber-400 mx-auto mb-4"></div>
-              <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-                Stay updated with the latest videos from Masjid Al-Ezz
-              </p>
-            </div>
-            <VideoReels />
-          </div>
-        </div>
+            )
+          )}
+        </VideoReels>
 
         {/* Events Section */}
         <section id="events" className="w-full bg-gradient-to-b from-primary/5 to-white min-h-[120vh] md:min-h-[100vh] flex items-center">
