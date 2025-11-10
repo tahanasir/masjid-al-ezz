@@ -47,8 +47,10 @@ export function Footer({ className = '' }: FooterProps) {
               <Link className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-white/80 text-sm">
-            A service of Peel Muslim Community Centre (PMCC)
+          <p className="text-white/70 text-sm">
+            We are a registered charity with the CRA. Peel Muslim Community Centre (PMCC). Charitable Registration No. 700208937RC0001
+            <br />
+            
           </p>
           <p className="text-white/80 text-sm">
             Copyright &copy; {new Date().getFullYear()} Masjid Al-Ezz. All
