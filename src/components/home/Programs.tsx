@@ -11,14 +11,12 @@ interface ProgramsProps {
 export function Programs({ limit, shuffle }: ProgramsProps) {
   let programs = [
     {
-      title: "Weekend Islamic School",
-      description:
-        "Starting Saturday, Sept 6th, children ages 6–14 can spend their weekends attending Qur'an classes, Islamic Studies sessions, and Arabic language classes, while also enjoying fun activities like sports and arts!",
-      schedule: "Every Saturday",
-      time: "10:00 AM - 2:00 PM",
-      image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      cost: "$75/month or $600/year",
-      link: "https://bit.ly/toledo-weekend-islamic-school",
+      title: "Sahaba Stories",
+      description: "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.",
+      schedule: "Starting Dec 8th, Every Monday",
+      time: "7:00 PM",
+      image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      cost: "Free",
     },
     {
       title: "Youth Qur'an Class (Ages 6-16)",
@@ -30,21 +28,12 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       cost: "$75/month",
       link: "http://bit.ly/youth-tajweed",
     },
-    // {
-    //   title: "Deen & Discovery",
-    //   description:
-    //     "Join us for a scenic nature walk as we reflect on the signs of Allah's creation. Open to all! Families welcome!",
-    //   schedule: "Saturday Bi-weekly",
-    //   time: "11:30 AM",
-    //   cost: "Free",
-    //   image: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
-    // },
     {
       title: "Beginner's Boxing Classes (Brothers 14+)",
       description:
         "A structured boxing program for youth that teaches discipline and self-defense in a safe environment. First two classes are complimentary.",
       schedule: "Every Thursday",
-      time: "8:00 PM - 10:00 PM",
+      time: "7:00 PM - 9:00 PM",
       image:
         "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "$50/month",
@@ -55,7 +44,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Join us weekly for a beautiful evening of sisterhood, reflection, and learning as we connect over the noble verses of the Qur'an with a warm drink in hand.",
       schedule: "Every Wednesday",
-      time: "7:00 PM - 8:00 PM",
+      time: "6:30 PM - 7:30 PM",
       image:
         "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       cost: "Free",
@@ -65,27 +54,17 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       description:
         "Masjid Al-Ezz invites all high school & university students to come out for our weekly ILM & CHILL session!\n\n📖 This week's topic: 'A Muslim's Vision' – a short and powerful khatira after Maghrib to get us thinking about our direction and goals as Muslims.\n\n🎉 After the talk, stick around for some fun activities, chill vibes, brotherhood and some delicious pizza 🍕",
       schedule: "Every Saturday",
-      time: "7:00 PM",
+      time: "After Isha",
       image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=800",
       cost: "Free",
       link: "https://tinyurl.com/YouthSNL",
-    },
-    {
-      title: "History of the 5 Caliphs",
-      description:
-        "Take a step back into Islamic history and reconnect with the roots of our faith. History of the 5 Caliphs is a weekly series exploring the early days of Islam.",
-      schedule: "Every Thursday",
-      time: "8:00 PM",
-      image:
-        "https://images.pexels.com/photos/31779465/pexels-photo-31779465.jpeg",
-      cost: "Free",
     },
     {
       title: "Family Tafsir Night",
       description:
         "Weekly family tafsir night featuring halaqas for youth and adults, children's activities. Tea and dinner will be provided.",
       schedule: "Every Friday",
-      time: "7:00 PM",
+      time: "After Isha",
       image:
         "https://images.pexels.com/photos/31607773/pexels-photo-31607773.jpeg",
       cost: "Free",
@@ -106,7 +85,7 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
 
   // Define pinned program titles
   const pinnedTitles = [
-    "Weekend Islamic School",
+    "Sahaba Stories",
     "Youth Qur'an Class (Ages 6-16)",
     "Tajweed & Hifdh Class (Sisters)",
     "Family Tafsir Night",
