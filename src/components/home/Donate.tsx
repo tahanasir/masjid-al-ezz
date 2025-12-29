@@ -21,9 +21,9 @@ export function Donate() {
               <div className="w-full rounded-lg overflow-hidden">
                 <div className="relative overflow-hidden pb-[200%] md:pb-[100%]">
                   <iframe
-                    src="https://app.irm.io/masjidalezz.com/payoffmasjidloan"
+                    src="https://app.irm.io/masjidalezz.com/where-most-needed"
                     className="absolute top-0 left-0 w-full h-full"
-                    title="Masjid Al-Ezz Loan Payment"
+                    title="Masjid Al-Ezz Donation"
                     style={{
                       colorScheme: "light",
                       accentColor: "#620043",

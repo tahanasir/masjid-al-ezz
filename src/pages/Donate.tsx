@@ -6,7 +6,7 @@ export default function Donate() {
 
   useEffect(() => {
     // Redirect to the external donation URL
-    window.location.href = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan';
+    window.location.href = 'https://app.irm.io/masjidalezz.com/where-most-needed';
   }, [navigate]);
 
   return (
@@ -20,7 +20,7 @@ export default function Donate() {
         <p className="mt-8 text-sm text-gray-500">
           If you are not redirected automatically, 
           <a 
-            href="https://app.irm.io/masjidalezz.com/payoffmasjidloan" 
+            href="https://app.irm.io/masjidalezz.com/where-most-needed" 
             className="text-primary hover:underline ml-1"
           >
             click here
