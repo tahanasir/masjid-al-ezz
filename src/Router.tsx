@@ -24,7 +24,7 @@ const AppRoutes: React.FC = () => {
   // Handle hash-based routing for /#donate
   useEffect(() => {
     if (window.location.hash === '#donate') {
-      window.location.href = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan';
+      window.location.href = 'https://app.irm.io/masjidalezz.com/where-most-needed';
     }
   }, [location.hash]);
 
