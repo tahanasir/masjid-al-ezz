@@ -17,41 +17,39 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero Section */}
-        <section className="w-full bg-primary min-h-[calc(100vh-80px)] flex items-center py-12 md:py-16"
+        <section className="w-full bg-primary min-h-screen flex items-center py-2 md:py-4"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         >
           <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-center justify-center">
-              {/* Left Column - Welcome and Prayer Times */}
-              <div className="w-full lg:w-5/12 space-y-4">
-                {/* Welcome Section */}
-                <div className="p-6 sm:p-8">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 font-serif text-center lg:text-left">
-                    Welcome to Masjid Al-Ezz!
-                  </h1>
-                  <div className="text-white/90 space-y-2 space-y-3 text-xs sm:text-sm text-center lg:text-left">
-                    <p>
-                      <span className="font-bold text-amber-300 text-sm sm:text-base">
-                        Masjid Al-Ezz has opened, Alhamdulillah
-                      </span>
-                      <br />
-                      Your generous support turned a vision into reality.
-                    </p>
-                  </div>
-                </div>
+            {/* Welcome Section - Moved Top */}
+            <div className="text-center mb-2 md:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif">
+                Welcome to Masjid Al-Ezz!
+              </h1>
+              <div className="text-white/90 space-y-2 text-sm sm:text-base">
+                <p>
+                  <span className="font-bold text-amber-300 text-lg sm:text-xl block mb-2">
+                    Masjid Al-Ezz has opened, Alhamdulillah
+                  </span>
+                  Your generous support turned a vision into reality.
+                </p>
+              </div>
+            </div>
 
-                {/* Prayer Times */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden">
-                  <div className="p-4">
+            <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-stretch justify-center">
+              {/* Left Column - Prayer Times */}
+              <div className="flex-1 w-full">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden h-full">
+                  <div className="p-4 h-full">
                     <MasjidBoxWidget />
                   </div>
                 </div>
               </div>
 
               {/* Right Column - Featured Event */}
-              <div className="w-full lg:w-5/12 mt-8 lg:mt-0">
+              <div className="flex-1 w-full mt-8 lg:mt-0">
                 <FeaturedEvent />
               </div>
             </div>
@@ -102,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* Instagram Gallery Section */}
-        <div 
+        <div
           className="w-full min-h-[120vh] md:min-h-[100vh] flex items-center py-16 md:py-0 bg-primary"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -152,7 +150,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         <div className="hidden md:block relative z-10 w-full bg-primary min-h-[calc(100vh-80px)] py-12 md:py-16"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

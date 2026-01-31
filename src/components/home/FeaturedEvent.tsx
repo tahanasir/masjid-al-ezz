@@ -42,15 +42,15 @@ export function FeaturedEvent() {
         }
         const data = await response.json();
         console.log('Fetched Instagram data:', data);
-        
+
         // Get the most recent picture post (filter out videos and reels)
         if (data.posts && data.posts.length > 0) {
-          const picturePost = data.posts.find((post: any) => 
-            post.mediaType === 'IMAGE' && 
-            !post.mediaUrl.includes('video') && 
+          const picturePost = data.posts.find((post: any) =>
+            post.mediaType === 'IMAGE' &&
+            !post.mediaUrl.includes('video') &&
             !post.permalink.includes('/reel/')
           );
-          
+
           if (picturePost) {
             console.log('Latest picture post:', picturePost);
             setFeaturedEvent({
@@ -89,16 +89,16 @@ export function FeaturedEvent() {
   // Function to convert URLs in text to clickable links
   const linkifyText = (text: string) => {
     if (!text) return '';
-    
+
     // Regular expression to match URLs
     const urlRegex = /(https?:\/\/[^\s]+)/g;
-    
+
     // Split the text into parts, keeping the URLs
     const parts = text.split(urlRegex);
-    
+
     // If no URLs found, return the original text
     if (parts.length === 1) return text;
-    
+
     // Process each part to detect URLs and convert them to links
     return parts.map((part, index) => {
       if (part.match(urlRegex)) {
@@ -107,22 +107,22 @@ export function FeaturedEvent() {
         if (!url.startsWith('http')) {
           url = 'https://' + url;
         }
-        
+
         // Extract domain for display
         let displayUrl = url
           .replace(/^https?:\/\//, '') // Remove protocol
           .replace(/\/$/, ''); // Remove trailing slash
-          
+
         // Shorten display URL if too long
         if (displayUrl.length > 30) {
           displayUrl = displayUrl.substring(0, 30) + '...';
         }
-        
+
         return (
-          <a 
+          <a
             key={index}
-            href={url} 
-            target="_blank" 
+            href={url}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-amber-300 hover:underline break-all"
           >
@@ -163,13 +163,13 @@ export function FeaturedEvent() {
           .replace(/[🕕]/g, '')  // Remove clock emoji
           .replace(/^time:/i, '') // Remove 'time:' prefix if present
           .trim();
-        
+
         // If the time contains 'PM' or 'AM', ensure proper spacing
         timeStr = timeStr.replace(/(\d)([AP]M)/i, '$1 $2');
-        
+
         // Clean up any double spaces
         timeStr = timeStr.replace(/\s+/g, ' ').trim();
-        
+
         // Set the time as is, since it's already in the correct format from Instagram
         details.time = timeStr;
       } else if (lowerLine.includes('📍') || lowerLine.includes('location:')) {
@@ -221,14 +221,14 @@ export function FeaturedEvent() {
     time: '',
     location: 'Masjid Al-Ezz'
   };
-  
+
   // Use the medium-sized image from Instagram if available, otherwise use the placeholder
-  const eventImage = featuredEvent?.sizes?.medium?.mediaUrl || 
-                    featuredEvent?.sizes?.large?.mediaUrl || 
-                    featuredEvent?.sizes?.small?.mediaUrl || 
-                    featuredEvent?.sizes?.full?.mediaUrl || 
-                    featuredEvent?.mediaUrl || 
-                    placeholderImage;
+  const eventImage = featuredEvent?.sizes?.medium?.mediaUrl ||
+    featuredEvent?.sizes?.large?.mediaUrl ||
+    featuredEvent?.sizes?.small?.mediaUrl ||
+    featuredEvent?.sizes?.full?.mediaUrl ||
+    featuredEvent?.mediaUrl ||
+    placeholderImage;
 
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 h-full flex flex-col">
@@ -238,48 +238,47 @@ export function FeaturedEvent() {
         </h2>
       </div>
       <div className="flex-grow flex flex-col">
-        <div className="relative overflow-hidden mx-auto" style={{ height: '425px', maxWidth: '80%', width: '100%' }}>
-          <img 
+        <div className="w-full">
+          <img
             src={eventImage}
             alt={eventDetails.title}
-            className="w-full h-full object-cover"
+            className="w-full h-auto max-h-[600px] object-contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         </div>
         <div className="p-6 flex-grow flex flex-col">
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-4">{eventDetails.title}</h3>
             <p className="text-white/90 text-sm whitespace-pre-line">
-              {typeof eventDetails.description === 'string' 
-                ? linkifyText(eventDetails.description) 
+              {typeof eventDetails.description === 'string'
+                ? linkifyText(eventDetails.description)
                 : eventDetails.description}
             </p>
           </div>
           {(eventDetails.date || eventDetails.time || eventDetails.location) && (
-          <div className="mt-auto space-y-2">
-            {eventDetails.date && (
-              <div className="flex items-center text-amber-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span>{eventDetails.date} {eventDetails.time && `• ${eventDetails.time}`}</span>
-              </div>
-            )}
-            {eventDetails.location && (
-              <div className="flex items-center text-amber-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>{eventDetails.location}</span>
-              </div>
-            )}
-          </div>
-        )}
-        
-          <a 
-            href={featuredEvent.permalink} 
-            target="_blank" 
+            <div className="mt-auto space-y-2">
+              {eventDetails.date && (
+                <div className="flex items-center text-amber-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>{eventDetails.date} {eventDetails.time && `• ${eventDetails.time}`}</span>
+                </div>
+              )}
+              {eventDetails.location && (
+                <div className="flex items-center text-amber-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>{eventDetails.location}</span>
+                </div>
+              )}
+            </div>
+          )}
+
+          <a
+            href={featuredEvent.permalink}
+            target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-lg transition duration-200 text-center text-base"
           >
