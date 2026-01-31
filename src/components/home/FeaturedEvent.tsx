@@ -232,59 +232,62 @@ export function FeaturedEvent() {
 
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 h-full flex flex-col">
-      <div className="bg-primary/90 py-3 px-4">
+      <div className="bg-primary/90 py-3 px-4 flex-none">
         <h2 className="text-lg font-serif text-white font-semibold">
           Featured Event
         </h2>
       </div>
-      <div className="flex-grow flex flex-col">
-        <div className="w-full">
-          <img
-            src={eventImage}
-            alt={eventDetails.title}
-            className="w-full h-auto max-h-[600px] object-contain"
-          />
-        </div>
-        <div className="p-6 flex-grow flex flex-col">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-white mb-4">{eventDetails.title}</h3>
-            <p className="text-white/90 text-sm whitespace-pre-line">
-              {typeof eventDetails.description === 'string'
-                ? linkifyText(eventDetails.description)
-                : eventDetails.description}
-            </p>
-          </div>
-          {(eventDetails.date || eventDetails.time || eventDetails.location) && (
-            <div className="mt-auto space-y-2">
-              {eventDetails.date && (
-                <div className="flex items-center text-amber-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>{eventDetails.date} {eventDetails.time && `• ${eventDetails.time}`}</span>
-                </div>
-              )}
-              {eventDetails.location && (
-                <div className="flex items-center text-amber-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>{eventDetails.location}</span>
-                </div>
-              )}
-            </div>
-          )}
 
-          <a
-            href={featuredEvent.permalink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-lg transition duration-200 text-center text-base"
-          >
-            Learn More on Instagram
-          </a>
+      {/* Image Section - Takes available space */}
+      <div className="flex-1 min-h-0 relative w-full overflow-hidden bg-black/20">
+        <img
+          src={eventImage}
+          alt={eventDetails.title}
+          className="absolute inset-0 w-full h-full object-contain"
+        />
+      </div>
+
+      {/* Details Section - Auto height based on content */}
+      <div className="p-4 flex-none flex flex-col bg-black/10">
+        <div className="mb-4">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-2">{eventDetails.title}</h3>
+          <p className="text-white/90 text-sm whitespace-pre-line line-clamp-3">
+            {typeof eventDetails.description === 'string'
+              ? linkifyText(eventDetails.description)
+              : eventDetails.description}
+          </p>
         </div>
+
+        {(eventDetails.date || eventDetails.time || eventDetails.location) && (
+          <div className="mb-4 space-y-1">
+            {eventDetails.date && (
+              <div className="flex items-center text-amber-300 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>{eventDetails.date} {eventDetails.time && `• ${eventDetails.time}`}</span>
+              </div>
+            )}
+            {eventDetails.location && (
+              <div className="flex items-center text-amber-300 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>{eventDetails.location}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        <a
+          href={featuredEvent.permalink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200 text-center text-sm md:text-base mt-auto"
+        >
+          Learn More
+        </a>
       </div>
     </div>
   );

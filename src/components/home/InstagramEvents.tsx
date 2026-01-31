@@ -155,7 +155,7 @@ export function InstagramEvents() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative h-full">
       {/* Left scroll button */}
       {canScrollLeft && (
         <button
@@ -181,13 +181,13 @@ export function InstagramEvents() {
       {/* Posts container */}
       <div
         ref={scrollContainerRef}
-        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory w-full py-4 h-[600px] md:h-auto px-4 no-scrollbar"
+        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory w-full py-8 h-full px-4 no-scrollbar items-center"
       >
         {posts.map((post) => (
           <div
             key={post.id}
             data-post
-            className="flex-none w-[calc(100vw-2rem)] md:w-80 lg:w-96 xl:w-[480px] snap-center group hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full"
+            className="flex-none h-full w-auto aspect-[4/5] snap-center group hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             onClick={() =>
               window.open(post.permalink, "_blank", "noopener,noreferrer")
             }

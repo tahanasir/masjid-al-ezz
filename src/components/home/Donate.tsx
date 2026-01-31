@@ -4,12 +4,12 @@ export function Donate() {
   return (
     <div className="w-full">
       <div className="w-full max-w-5xl mx-auto">
-        <div className="text-center mb-2">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mb-3">
             Support Our Masjid
           </h2>
           <div className="w-24 h-1 bg-amber-400 mx-auto mb-4"></div>
-          <p className="max-w-2xl mx-auto text-white/80 text-base md:text-lg mb-6">
+          <p className="max-w-2xl mx-auto text-white/90 text-base md:text-lg">
             Your generous donations help maintain our masjid, support our
             programs, and serve the community. All donations are tax deductible.
           </p>
