@@ -18,9 +18,8 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero Section */}
-        <section className="w-full bg-primary flex flex-col overflow-hidden"
+        <section className="w-full bg-primary flex flex-col lg:overflow-hidden min-h-[calc(100vh-3.5rem)] lg:h-[calc(100vh-3.5rem)]"
           style={{
-            height: 'calc(100vh - 3.5rem)',
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         >
@@ -42,7 +41,7 @@ export default function Home() {
 
             <div className="flex-1 min-h-0 w-full flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-stretch justify-center pb-2">
               {/* Left Column - Prayer Times */}
-              <div className="flex-1 w-full h-full min-h-0">
+              <div className="w-full h-[500px] lg:h-full lg:flex-1 min-h-0">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden h-full border border-white/20">
                   <div className="p-4 h-full">
                     <MasjidBoxWidget />
@@ -51,7 +50,7 @@ export default function Home() {
               </div>
 
               {/* Right Column - Featured Event */}
-              <div className="flex-1 w-full h-full min-h-0">
+              <div className="w-full h-[500px] lg:h-full lg:flex-1 min-h-0">
                 <FeaturedEvent />
               </div>
             </div>
