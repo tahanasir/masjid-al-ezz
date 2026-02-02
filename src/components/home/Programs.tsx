@@ -12,9 +12,9 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
   let programs = [
     {
       title: "Sahaba Stories",
-      description: "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.",
-      schedule: "Starting Dec 8th, Every Monday",
-      time: "7:00 PM",
+      description: "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.\n\n🎙️ With Ustad Abu Rasheed",
+      schedule: "Every Monday",
+      time: "7:30 PM after Isha Salah",
       image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       cost: "Free",
     },
@@ -81,10 +81,20 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       cost: "See registration form",
       link: "https://api.leadconnectorhq.com/widget/form/nong0q79d2TaF51IBkCZ",
     },
+    {
+      title: "Weekly Grappling Classes",
+      description: "Get ready, brothers! Weekly grappling classes are starting Saturday, January 17 (please note the start date has changed), in partnership with Strike MMA and led by a professional coach.\n\nThese classes are open to brothers and will help you develop grappling skills, improve fitness, and build confidence in a supportive environment.",
+      schedule: "Every Saturday, starting January 17",
+      time: "1:00 PM – 2:00 PM",
+      image: "/grappling-class.png",
+      cost: "$95/month",
+      link: "https://bit.ly/alezz-weekly-grappling",
+    },
   ];
 
   // Define pinned program titles
   const pinnedTitles = [
+    "Weekly Grappling Classes",
     "Sahaba Stories",
     "Youth Qur'an Class (Ages 6-16)",
     "Tajweed & Hifdh Class (Sisters)",
