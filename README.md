@@ -53,7 +53,15 @@ To create a production-ready build:
 npm run build
 ```
 
-This will generate the static assets in the `dist` directory. The project is configured to copy `staticwebapp.config.json` to the output folder for deployment configuration.
+This will generate the static assets in the `dist` directory.
+
+## 🚀 Deployment
+
+This project is configured for automated deployment to **GitHub Pages** using GitHub Actions.
+
+1.  Required branch: `main`
+2.  Workflow file: `.github/workflows/main.yml`
+3.  Process: Pushing to `main` triggers a build and deploys the `dist` folder to GitHub Pages.
 
 ## 📁 Project Structure
 
