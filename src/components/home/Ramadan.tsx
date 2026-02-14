@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Ticket, Heart } from "lucide-react";
-// @ts-ignore
-import ramadanPdf from "@/assets/ramadan.pdf.pdf";
+
+const SITE_URL = "https://masjidalezz.com";
+const PDF_PATH = "/ramadan-calendar.pdf";
+const GOOGLE_VIEWER_URL = `https://docs.google.com/gview?url=${encodeURIComponent(SITE_URL + PDF_PATH)}&embedded=true`;
 
 export function Ramadan() {
   return (
@@ -19,11 +21,12 @@ export function Ramadan() {
 
         <div className="bg-white rounded-xl shadow-lg border p-4 md:p-8 max-w-5xl mx-auto">
           {/* PDF Viewer */}
-          <div className="w-full h-[600px] md:h-[800px] bg-gray-100 rounded-lg overflow-hidden mb-8 border">
+          <div className="w-full h-[450px] md:h-[800px] bg-gray-100 rounded-lg overflow-hidden mb-8 border">
             <iframe
-              src={ramadanPdf}
+              src={GOOGLE_VIEWER_URL}
               className="w-full h-full"
               title="Ramadan Calendar"
+              allow="autoplay"
             />
           </div>
 
