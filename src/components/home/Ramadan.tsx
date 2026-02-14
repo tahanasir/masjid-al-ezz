@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Ticket, Heart } from "lucide-react";
+import { Ticket, Heart } from "lucide-react";
+import { SITE_URL } from "@/config";
 
-const SITE_URL = "https://masjidalezz.com";
 const PDF_PATH = "/ramadan-calendar.pdf";
-const GOOGLE_VIEWER_URL = `https://docs.google.com/gview?url=${encodeURIComponent(SITE_URL + PDF_PATH)}&embedded=true`;
+const PDF_URL = `${SITE_URL}${PDF_PATH}`;
+const GOOGLE_VIEWER_URL = `https://docs.google.com/gview?url=${encodeURIComponent(PDF_URL)}&embedded=true`;
 
 export function Ramadan() {
   return (
@@ -26,7 +27,6 @@ export function Ramadan() {
               src={GOOGLE_VIEWER_URL}
               className="w-full h-full"
               title="Ramadan Calendar"
-              allow="autoplay"
             />
           </div>
 
@@ -43,7 +43,7 @@ export function Ramadan() {
                 Sponsor an Iftar
               </Button>
             </a>
-            
+
             <a
               href="https://api.leadconnectorhq.com/widget/form/jEzwvPrpoaeuPuog4OiN?notrack=true"
               target="_blank"
