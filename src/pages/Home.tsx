@@ -11,6 +11,7 @@ import { VideoReels } from "@/components/home/VideoReels";
 import { FeaturedEvent } from "@/components/home/FeaturedEvent";
 import Gallery from "@/components/home/Gallery";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { Ramadan } from "@/components/home/Ramadan";
 
 export default function Home() {
   return (
@@ -56,6 +57,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Ramadan Section */}
+        <Ramadan />
 
         {/* Video Reels Section - Only show if there are videos */}
         <VideoReels>
