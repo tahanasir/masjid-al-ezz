@@ -12,10 +12,17 @@ import { FeaturedEvent } from "@/components/home/FeaturedEvent";
 import Gallery from "@/components/home/Gallery";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { Ramadan } from "@/components/home/Ramadan";
+import { PromoDialog } from "@/components/ui/PromoDialog";
+import communityDinnerImg from "@/assets/images/community_dinner.jpg";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      <PromoDialog
+        imageSrc={communityDinnerImg}
+        imageAlt="Community Dinner - March 1st at Verdi Banquet Hall"
+        href="https://bit.ly/alezz-ramadan-dinner"
+      />
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero Section */}
